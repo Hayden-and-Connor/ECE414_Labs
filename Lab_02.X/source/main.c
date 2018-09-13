@@ -43,7 +43,7 @@ struct TSPoint map_touch_to_pixels(struct TSPoint p){
     struct TSPoint np;
     np.z = p.z;
     np.y = ((p.x - 150) * (SCREEN_HEIGHT))/(900 - 150);
-    np.x = SCREEN_WIDTH - (((p.y - 350) * (SCREEN_WIDTH))/(950 - 350));
+    np.x = SCREEN_WIDTH - (((p.y - 50) * (SCREEN_WIDTH))/(950 - 50));
     return np;
 }
 
