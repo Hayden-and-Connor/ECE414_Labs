@@ -27,12 +27,6 @@
 #define XM AN0
 #define YP AN1
 
-#define SCREEN_WIDTH 320
-#define SCREEN_HEIGHT 240
-
-int colorCount = 6;
-int16_t colors[10] = {0x0000, 0xf800, 0x07e0, 0x001f, 0x07ff, 0xffe0}; 
-
 typedef struct {
 	int16_t color;
 	int size;
@@ -51,6 +45,18 @@ struct TSPoint map_touch_to_pixels(struct TSPoint p){
     np.y = ((p.x - 150) * (SCREEN_HEIGHT))/(900 - 150);
     np.x = SCREEN_WIDTH - (((p.y - 350) * (SCREEN_WIDTH))/(950 - 350));
     return np;
+}
+
+// paints a point on the screen based on current brush properties
+void paint(TSPoint point) {
+	// don't paint anything if we are within this rectangle
+	if(
+			point.y > SCREEN_HEIGHT - (30 * (colorCount + 1)) - (3*brush.size)
+		&&	point.x > SCREEN_WIDTH - 30 - (3*brush.size)
+	) return;
+
+	// do the painting
+	tft_fillCircle(point.x, point.y, brush.size, brush.color);
 }
 
 int main(int argc, char** argv) {
@@ -84,33 +90,32 @@ int main(int argc, char** argv) {
     draw_buttons();
 
     while(1) {
+    	// get touch point
         struct TSPoint p = {0, 0, 0};
-        getPoint(&p);        
+        getPoint(&p);   
+        // map touch point to screen point     
         struct TSPoint np;
         np = map_touch_to_pixels(p);
 
-        
+        // check to see if the user is touching the screen
+        if(np.z > THRESHOLD) {
 
-        Button* pressed = detectPress(&np);
-        if(pressed){
-        	if(pressed == clear_screen){
-        		tft_fillScreen(ILI9341_WHITE);
-        	} else {
-        		switchTo(pressed);
-        		clear_screen -> active = 1;
-        		brush.color = pressed -> color;
-        	}
-       		tft_fillRect()
-        	draw_buttons();
-        } else {
-        	if(np.z > 2){
-        		if(
-        				(np.y > SCREEN_HEIGHT - (30 * (colorCount + 1)) - (3*brush.size) )
-        			&&	(np.x > SCREEN_WIDTH - 30 - (3*brush.size))) {
+        	//get the button that is being pressed, or NULL if none
+        	Button* pressed = detectPress(&np);
+
+        	if(pressed == NULL) paint(np); // no button is pressed, paint
+        	else {
+        		// process button logic
+        		if(pressed == clear_screen) {
+        			tft_fillScreen(ILI9341_WHITE);
         		} else {
-	        		tft_fillCircle(np.x, np.y, brush.size, brush.color);
+        			switchTo(pressed);
+        			clear_screen -> active = 1; // keep clear screen active (with boarder)
+        			brush.color = pressed -> color;
         		}
-        	} 
+
+        		draw_buttons();
+        	}
     	}
 
         delay_ms(1);    
