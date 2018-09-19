@@ -12,13 +12,12 @@
 // Convenient defines for width and height of display
 #define SCREEN_WIDTH	320
 #define SCREEN_HEIGHT	240
-// #define MAX_RAD	50
 
 void main() {
 	char buffer[64];
     uint32_t i, idx;
     
-    screen_init();
+    SCREEN.init();
     tft_fillScreen(0xffff);
     Vector2 a = {3, 4};
     Vector2 b = {1, 7};
@@ -30,13 +29,8 @@ void main() {
    {
 
    		struct TSPoint p, np;
-   		p.x = 0;
-	    p.y = 0;
-	    p.z = 0;
-       	np.x = 0;
-       	np.y = 0;
-       	np.z = 0;
-       	p = new_getPoint();
+
+       	p = SCREEN.getPoint();
        	if(p.z > 2){
        		np = p;
 		}
@@ -45,13 +39,11 @@ void main() {
 
 		// Draw some text
 		tft_setCursor(10, 10);  // Upper Left Hand Corner
-		tft_setTextColor(0x0000);  tft_setTextSize(2);
-		sprintf(buffer, "hello (%d, %d) + (%d, %d) = (%d, %d)", a.x, a.y, b.x, b.y, test.x, test.y);
+		// tft_setTextColor(0x0000);  tft_setTextSize(2);
+		// sprintf(buffer, "hello (%d, %d) + (%d, %d) = (%d, %d)", a.x, a.y, b.x, b.y, test.x, test.y);
 
 		tft_writeString(buffer);
 
-
-		// erase
 		tft_setCursor(10, 100);  // Upper Left Hand Corner
 		tft_setTextColor(0xffff); tft_setTextSize(2);
 		tft_writeString(buffer);

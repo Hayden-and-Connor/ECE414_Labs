@@ -52,6 +52,6 @@ Mkfile.old
 dkms.conf
 
 # Additional Ignores
-**/debug/
-**/nbproject/
-**/Makefile
+# **/debug/
+# **/nbproject/
+# **/Makefile

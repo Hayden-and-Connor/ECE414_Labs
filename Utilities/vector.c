@@ -10,11 +10,10 @@ static Vector2 add(Vector2 a, Vector2 b){
 	return output;
 }
 
-
 typedef struct {
 	Vector2 (*add)(Vector2, Vector2);
-} functionList;
+} vector_interface;
 
-functionList VECTOR = { &add };
+vector_interface VECTOR = { &add };
 
 #endif

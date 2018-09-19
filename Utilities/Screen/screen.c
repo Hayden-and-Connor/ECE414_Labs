@@ -8,16 +8,21 @@
 #include <xc.h>
 #include "Utilities/Screen/adc_intf.h"
 #include "Utilities/Screen/TouchScreen.h"
-// #include "Utilities/Screen/TouchScreen.c"
+
+#include "Utilities/vector.c"
 
 #define SCREEN_WIDTH	320
 #define SCREEN_HEIGHT	240
 
-//this should be typdefed because we can't remember to type "struct
-//and we've already wasted so much time
-// typedef struct TSPoint TSPoint;
+typedef struct TSPoint TSPoint;
 
-void screen_init() {
+typedef struct click_event {
+	Vector2 position;
+} click_event;
+
+typedef void (*click_handler)(click_event*);
+
+static void init() {
 	ANSELA = 0; 
 	ANSELB = 0; 
 	
@@ -35,15 +40,32 @@ void screen_init() {
 	tft_setRotation(1);
 }
 
-// void getPoint(struct TSPoint*p) {}
-
-struct TSPoint new_getPoint(){
-	struct TSPoint p;
+static TSPoint new_getPoint(){
+	TSPoint p;
     p.x = 0;
     p.y = 0;
     p.z = 0;
     getPoint(&p);
     return p;
 }
+
+static void listen() {
+	TSPoint point new_getPoint();
+
+	
+}
+
+// declare an interface for talking with this module
+// (lets us call functions with the dot operator, which 
+// helps keep the global namespace clean and aids in debugging)
+typedef struct {
+	TSPoint (*getPoint)();
+	void (*init)();
+} screen_interface;
+
+screen_interface SCREEN = { 
+	&new_getPoint, 
+	&init
+};
 
 #endif
