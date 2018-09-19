@@ -25,6 +25,9 @@ void screen_init() {
 	CM1CON = 0; 
 	CM2CON = 0;
 	
+    SYSTEMConfigPerformance(PBCLK);
+    configureADC();
+    
 	// Initialize TFT
 	tft_init_hw();
 	tft_begin();
