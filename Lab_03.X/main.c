@@ -45,7 +45,7 @@ void main() {
 	// SCREEN.on_touch_up( &clear );
 	// SCREEN.on_touch_down( &fill );
 
-	SCREEN.on_touch_down( &log_click );
+	// SCREEN.on_touch_down( &log_click );
 
     uint32_t i, idx;
     
@@ -68,10 +68,6 @@ void main() {
 
 	// tft_fillScreen(0x0000);
     init_calculator();
-    digit_pressed(1);
-    operator_pressed(ADD);
-    digit_pressed(2);
-    operator_pressed(EQUAL);
 
    while (1) {
 		SCREEN.listen();

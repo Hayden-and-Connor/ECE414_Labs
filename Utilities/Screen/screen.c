@@ -40,6 +40,9 @@ click_handler up_listeners[MAX_LISTENERS];
 static int down_listeners_size = 0;
 click_handler down_listeners[MAX_LISTENERS];
 
+static int hold_listeners_size = 0;
+click_handler hold_listeners[MAX_LISTENERS];
+
 static void on_touch_down(click_handler handler) {
 	if(down_listeners_size >= MAX_LISTENERS) return;
 
@@ -52,6 +55,13 @@ static void on_touch_up(click_handler handler) {
 
 	up_listeners[up_listeners_size] = handler;
 	up_listeners_size ++;
+}
+
+static void on_touch_hold(click_handler handler) {
+	if(hold_listeners_size >= MAX_LISTENERS) return;
+
+	hold_listeners[hold_listeners_size] = handler;
+	hold_listeners_size ++;
 }
 
 static void screen_init() {
@@ -126,6 +136,11 @@ static void listen() {
 		}
 	}
 
+	// touch hold
+	if(current_state == DOWN && previous_state == DOWN) {
+
+	}
+
 	previous_state = current_state;
 }
 
@@ -139,6 +154,7 @@ typedef struct {
 	void (*init)();
 	void (*on_touch_up)(click_handler);
 	void (*on_touch_down)(click_handler);
+	void (*on_touch_hold)(click_handler);
 	void (*listen)();
 	// char buffer[64];
 } screen_interface;
@@ -148,6 +164,7 @@ screen_interface SCREEN = {
 	&screen_init,
 	&on_touch_up,
 	&on_touch_down,
+	&on_touch_hold,
 	&listen
 };
 
