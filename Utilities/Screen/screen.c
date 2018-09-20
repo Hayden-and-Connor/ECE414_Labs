@@ -14,6 +14,11 @@
 #define SCREEN_WIDTH	320
 #define SCREEN_HEIGHT	240
 
+#define TS_X_MIN 150
+#define TS_X_MAX 900
+#define TS_Y_MIN 50
+#define TS_Y_MAX 950
+
 typedef enum state {
 	UP,
 	DOWN
@@ -77,6 +82,13 @@ static TSPoint new_getPoint(){
     return p;
 }
 
+Vector2 map_touch_to_pixels(Vector2 input){
+	return VECTOR.new(
+		(((input.y - TS_Y_MIN) * (SCREEN_WIDTH))/(TS_Y_MAX - TS_Y_MIN)),
+		SCREEN_HEIGHT - ((input.x - TS_X_MIN) * SCREEN_HEIGHT) / (TS_X_MAX - TS_X_MIN)
+	);
+}
+
 #define THRESHOLD 10
 static void listen() {
 	static click_event current_event;
@@ -91,6 +103,7 @@ static void listen() {
 	// touch up
 	if(current_state == UP && previous_state == DOWN) {
 		Vector2 position = {point.x, point.y};
+		position = map_touch_to_pixels(position);
 		current_event.position = position;
 		current_event.state = UP;
 
@@ -100,8 +113,10 @@ static void listen() {
 		}
 	}
 
+	// touch down
 	if(current_state == DOWN && previous_state == UP) {
 		Vector2 position = {point.x, point.y};
+		position = map_touch_to_pixels(position);
 		current_event.position = position;
 		current_event.state = DOWN;
 

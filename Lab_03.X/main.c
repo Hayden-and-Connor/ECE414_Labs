@@ -28,11 +28,11 @@ void fill(click_event* event){
 void log_click(click_event* event){
 	tft_fillScreen(0xffff);
 
-	tft_setCursor(10, 100);  // Upper Left Hand Corner
+	tft_setCursor(10, 100); 
 	tft_setTextColor(0x0000);  tft_setTextSize(2);
-	sprintf(buffer, "calc = %s", 
-		// event -> position.x, 
-		// event -> position.y,
+	sprintf(buffer, "last touch (%d, %d) calc = %s", 
+		event -> position.x, 
+		event -> position.y,
 		CALCULATOR.display
 	);
 
