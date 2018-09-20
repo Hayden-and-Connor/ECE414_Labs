@@ -1,0 +1,4 @@
+#ifndef CALCULATOR_INTERFACE_H
+#define CALCULATOR_INTERFACE_H
+
+#endif

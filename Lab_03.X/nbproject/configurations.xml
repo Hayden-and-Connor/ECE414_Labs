@@ -35,6 +35,7 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
     <itemPath>main.c</itemPath>
+    <itemPath>calculator_interface.c</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>

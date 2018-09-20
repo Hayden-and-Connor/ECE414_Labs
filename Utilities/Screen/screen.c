@@ -1,15 +1,4 @@
-#ifndef SCREEN_C
-#define SCREEN_C
-
-#include "Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.h"
-#include "Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c"
-
-#include <plib.h>
-#include <xc.h>
-#include "Utilities/Screen/adc_intf.h"
-#include "Utilities/Screen/TouchScreen.h"
-
-#include "Utilities/vector.c"
+#include "Utilities/Screen/screen.h"
 
 #define SCREEN_WIDTH	320
 #define SCREEN_HEIGHT	240
@@ -29,24 +18,24 @@ typedef void (*click_handler)(click_event*);
 
 #define MAX_LISTENERS 10
 
-static int up_listeners_index = 0;
+static int up_listeners_size = 0;
 click_handler up_listeners[MAX_LISTENERS];
 
-static int down_listeners_index = 0;
+static int down_listeners_size = 0;
 click_handler down_listeners[MAX_LISTENERS];
 
 static void on_touch_down(click_handler handler) {
-	if(down_listeners_index >= MAX_LISTENERS) return;
+	if(down_listeners_size >= MAX_LISTENERS) return;
 
-	down_listeners[down_listeners_index] = handler;
-	down_listeners_index ++;
+	down_listeners[down_listeners_size] = handler;
+	down_listeners_size ++;
 }
 
 static void on_touch_up(click_handler handler) {
-	if(up_listeners_index >= MAX_LISTENERS) return;
+	if(up_listeners_size >= MAX_LISTENERS) return;
 
-	up_listeners[up_listeners_index] = handler;
-	up_listeners_index ++;
+	up_listeners[up_listeners_size] = handler;
+	up_listeners_size ++;
 }
 
 static void init() {
@@ -95,7 +84,7 @@ static void listen() {
 		current_event.state = UP;
 
 		int i;
-		for(i=0; i < up_listeners_index; i++) {
+		for(i=0; i < up_listeners_size; i++) {
 			up_listeners[i]( &current_event );
 		}
 	}
@@ -106,7 +95,7 @@ static void listen() {
 		current_event.state = DOWN;
 
 		int i;
-		for(i=0; i < down_listeners_index; i++) {
+		for(i=0; i < down_listeners_size; i++) {
 			down_listeners[i]( &current_event );
 		}
 	}
@@ -132,5 +121,3 @@ screen_interface SCREEN = {
 	&on_touch_down,
 	&listen
 };
-
-#endif

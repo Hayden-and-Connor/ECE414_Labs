@@ -7,7 +7,8 @@
 #pragma config FWDTEN = OFF,  FSOSCEN = OFF, JTAGEN = OFF
 
 #include "Utilities/vector.c"
-#include "Utilities/Screen/screen.c"
+#include "Utilities/Screen/screen.h"
+#include "calculator_interface.h"
 
 // Convenient defines for width and height of display
 #define SCREEN_WIDTH	320
@@ -64,11 +65,6 @@ void main() {
 
 
    while (1) {
-   		// sprintf(buffer, "UP");
-   		// tft_setTextColor(0x0000);
-   		// tft_setCursor(10, 10);
-   		// tft_writeString(buffer);
-
 		SCREEN.listen();
 
    		struct TSPoint p, np;
