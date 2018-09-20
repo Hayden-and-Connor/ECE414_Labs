@@ -9,6 +9,7 @@
 #include "Utilities/vector.c"
 #include "Utilities/Screen/screen.c"
 #include "calculator_interface.c"
+#include "Utilities/calculator.c"
 
 // Convenient defines for width and height of display
 // #define SCREEN_WIDTH	320
@@ -29,9 +30,10 @@ void log_click(click_event* event){
 
 	tft_setCursor(10, 100);  // Upper Left Hand Corner
 	tft_setTextColor(0x0000);  tft_setTextSize(2);
-	sprintf(buffer, "last touch (%d, %d)", 
+	sprintf(buffer, "last touch (%d, %d) calc = %s", 
 		event -> position.x, 
-		event -> position.y
+		event -> position.y,
+		CALCULATOR.display
 	);
 
 	tft_writeString(buffer);
@@ -65,7 +67,11 @@ void main() {
 	// tft_writeString(buffer);
 
 	// tft_fillScreen(0x0000);
-
+    init_calculator();
+    digit_pressed(1);
+    operator_pressed(ADD);
+    digit_pressed(2);
+    operator_pressed(EQUAL);
 
    while (1) {
 		SCREEN.listen();
