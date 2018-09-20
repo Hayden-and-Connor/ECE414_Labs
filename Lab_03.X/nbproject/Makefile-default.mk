@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c ../Utilities/Screen/screen.c ../Utilities/Screen/adc_intf.c ../Utilities/Screen/TouchScreen.c ../Utilities/gpio.c ../Utilities/vector.c main.c calculator_interface.c
+SOURCEFILES_QUOTED_IF_SPACED=../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c ../Utilities/Screen/screen.c ../Utilities/Screen/adc_intf.c ../Utilities/Screen/TouchScreen.c ../Utilities/gpio.c ../Utilities/vector.c main.c calculator_interface.c ../Utilities/Screen/event.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1137048943/glcdfont.o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ${OBJECTDIR}/_ext/1137048943/tft_master.o ${OBJECTDIR}/_ext/980479936/screen.o ${OBJECTDIR}/_ext/980479936/adc_intf.o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ${OBJECTDIR}/_ext/1174900389/gpio.o ${OBJECTDIR}/_ext/1174900389/vector.o ${OBJECTDIR}/main.o ${OBJECTDIR}/calculator_interface.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1137048943/glcdfont.o.d ${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d ${OBJECTDIR}/_ext/1137048943/tft_master.o.d ${OBJECTDIR}/_ext/980479936/screen.o.d ${OBJECTDIR}/_ext/980479936/adc_intf.o.d ${OBJECTDIR}/_ext/980479936/TouchScreen.o.d ${OBJECTDIR}/_ext/1174900389/gpio.o.d ${OBJECTDIR}/_ext/1174900389/vector.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/calculator_interface.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1137048943/glcdfont.o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ${OBJECTDIR}/_ext/1137048943/tft_master.o ${OBJECTDIR}/_ext/980479936/screen.o ${OBJECTDIR}/_ext/980479936/adc_intf.o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ${OBJECTDIR}/_ext/1174900389/gpio.o ${OBJECTDIR}/_ext/1174900389/vector.o ${OBJECTDIR}/main.o ${OBJECTDIR}/calculator_interface.o ${OBJECTDIR}/_ext/980479936/event.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1137048943/glcdfont.o.d ${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d ${OBJECTDIR}/_ext/1137048943/tft_master.o.d ${OBJECTDIR}/_ext/980479936/screen.o.d ${OBJECTDIR}/_ext/980479936/adc_intf.o.d ${OBJECTDIR}/_ext/980479936/TouchScreen.o.d ${OBJECTDIR}/_ext/1174900389/gpio.o.d ${OBJECTDIR}/_ext/1174900389/vector.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/calculator_interface.o.d ${OBJECTDIR}/_ext/980479936/event.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1137048943/glcdfont.o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ${OBJECTDIR}/_ext/1137048943/tft_master.o ${OBJECTDIR}/_ext/980479936/screen.o ${OBJECTDIR}/_ext/980479936/adc_intf.o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ${OBJECTDIR}/_ext/1174900389/gpio.o ${OBJECTDIR}/_ext/1174900389/vector.o ${OBJECTDIR}/main.o ${OBJECTDIR}/calculator_interface.o
+OBJECTFILES=${OBJECTDIR}/_ext/1137048943/glcdfont.o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ${OBJECTDIR}/_ext/1137048943/tft_master.o ${OBJECTDIR}/_ext/980479936/screen.o ${OBJECTDIR}/_ext/980479936/adc_intf.o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ${OBJECTDIR}/_ext/1174900389/gpio.o ${OBJECTDIR}/_ext/1174900389/vector.o ${OBJECTDIR}/main.o ${OBJECTDIR}/calculator_interface.o ${OBJECTDIR}/_ext/980479936/event.o
 
 # Source Files
-SOURCEFILES=../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c ../Utilities/Screen/screen.c ../Utilities/Screen/adc_intf.c ../Utilities/Screen/TouchScreen.c ../Utilities/gpio.c ../Utilities/vector.c main.c calculator_interface.c
+SOURCEFILES=../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c ../Utilities/Screen/screen.c ../Utilities/Screen/adc_intf.c ../Utilities/Screen/TouchScreen.c ../Utilities/gpio.c ../Utilities/vector.c main.c calculator_interface.c ../Utilities/Screen/event.c
 
 
 CFLAGS=
@@ -166,6 +166,12 @@ ${OBJECTDIR}/calculator_interface.o: calculator_interface.c  nbproject/Makefile-
 	@${RM} ${OBJECTDIR}/calculator_interface.o 
 	@${FIXDEPS} "${OBJECTDIR}/calculator_interface.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/calculator_interface.o.d" -o ${OBJECTDIR}/calculator_interface.o calculator_interface.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/_ext/980479936/event.o: ../Utilities/Screen/event.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/event.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/event.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/event.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/event.o.d" -o ${OBJECTDIR}/_ext/980479936/event.o ../Utilities/Screen/event.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/_ext/1137048943/glcdfont.o: ../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1137048943" 
@@ -226,6 +232,12 @@ ${OBJECTDIR}/calculator_interface.o: calculator_interface.c  nbproject/Makefile-
 	@${RM} ${OBJECTDIR}/calculator_interface.o.d 
 	@${RM} ${OBJECTDIR}/calculator_interface.o 
 	@${FIXDEPS} "${OBJECTDIR}/calculator_interface.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/calculator_interface.o.d" -o ${OBJECTDIR}/calculator_interface.o calculator_interface.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/980479936/event.o: ../Utilities/Screen/event.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/event.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/event.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/event.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/event.o.d" -o ${OBJECTDIR}/_ext/980479936/event.o ../Utilities/Screen/event.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 
