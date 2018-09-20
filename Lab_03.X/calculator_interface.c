@@ -12,7 +12,7 @@ typedef struct button_struct {
 
 	char label[3];
 
-	click_handler onclick;
+	void (*onclick)();
 } button;
 
 #define MAX_ELEMENTS 20
@@ -32,10 +32,6 @@ button* newButton(Vector2 position, Vector2 size, char label) {
 	return &(buttons[buttons_size - 1]);
 }
 
-static void onclick( click_event event ) {
-	int i;
-	for(i=0; i<buttons_size; i++) {}
-}
 
 static int point_inside_button(Vector2 point, button* button) {
 	return	point.x > button -> position.x
@@ -97,7 +93,7 @@ void handle_click(click_event* event) {
 	int i;
 	for(i=0; i<buttons_size; i++) {
 		if( point_inside_button(event -> position, buttons + i) ) {
-			(buttons + i) -> onclick(event);
+			(buttons + i) -> onclick();
 		}
 	}
 
@@ -133,7 +129,7 @@ static void calculator_interface_init() {
 	char symbol = '\0';
 
 	int i;
-	for(i=0; i< 10; i++) {
+	for(i=0; i< 9; i++) {
 		Vector2 position = VECTOR.new(
 			(i % 3) * button_size.x,
 			((i / 3) + 1) * button_size.y
