@@ -22,7 +22,7 @@
 
 // min signed int:       - 2 , 1 4 7 , 4 8 3 , 6 4 7 \0
 // index of char in hex: 0 1 2 3 4 5 6 7 8 9 a b c d e
-#define MAX_DISPLAY_CHAR 15 
+#define MAX_DISPLAY_CHAR 16 
 
 static int param[2]; 
 static char operator;
@@ -45,7 +45,7 @@ void init_calculator(){
 
 	param[0] = 0;
 	param[1] = 0;
-	operator = '\0';
+	operator = '+';
 	int i;
 	for(i = 0; i < MAX_DISPLAY_CHAR; i++){
 		display[i] = '\0';
