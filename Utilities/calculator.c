@@ -52,16 +52,12 @@ void init_calculator(){
 	}
 }
 
-// TODO negative overflow
 void add_digit(int param_index, int digit){
 	// check for overflow
-	if(param[param_index] > 0){
-		// positive overflow
-		if(param[param_index]*10 + digit < 0){
-			sprintf(display, "Error OverFlow"); // update display str in mem
-			return;
-		}
-	} 
+	if((param[param_index] & 0x7fffffff) * 10 + digit < 0){
+		sprintf(display, "Error OverFlow"); // update display str in mem
+		return;
+	}
 	// valid entry
 	param[param_index] *= 10;
 	param[param_index] += digit;
@@ -93,8 +89,13 @@ void calculate(){
 	} else if(operator == MULTIPLY){
 		param[0] *= param[1];
 	} else if(operator == DIVIDE){
+		if (param[1] == 0){
+			sprintf(display, "Error Div by 0");
+			return;
+		}
 		param[0] /= param[1];
 	}
+	sprintf(display, "%d", param[0]); 
 }
 
 void operator_pressed(char op){
@@ -109,9 +110,9 @@ void operator_pressed(char op){
 		} else {
 			param[1] = param[0];
 			state = OVERRIDE_PARAM_1;
+			sprintf(display, "%d", param[1]); 
 		}
 	}
-	sprintf(display, "%d", param[0]); 
 }
 
 // void clear_entry(){
