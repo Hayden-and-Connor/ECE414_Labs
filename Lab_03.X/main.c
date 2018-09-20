@@ -7,14 +7,14 @@
 #pragma config FWDTEN = OFF,  FSOSCEN = OFF, JTAGEN = OFF
 
 #include "Utilities/vector.c"
-#include "Utilities/Screen/screen.h"
-#include "calculator_interface.h"
+#include "Utilities/Screen/screen.c"
+#include "calculator_interface.c"
 
 // Convenient defines for width and height of display
-#define SCREEN_WIDTH	320
-#define SCREEN_HEIGHT	240
+// #define SCREEN_WIDTH	320
+// #define SCREEN_HEIGHT	240
 
-char buffer[64];
+// char buffer[64];
 
 void clear(click_event* event) {
 	tft_fillScreen(0xffff);
@@ -43,25 +43,28 @@ void main() {
 	// SCREEN.on_touch_up( &clear );
 	// SCREEN.on_touch_down( &fill );
 
-	SCREEN.on_touch_down( &log_click );
+	// SCREEN.on_touch_down( &log_click );
 
     uint32_t i, idx;
     
     SCREEN.init();
     tft_fillScreen(0xffff);
-    Vector2 a = {3, 4};
-    Vector2 b = {1, 7};
+    UI.init();
 
-    Vector2 test = VECTOR.add(a, b);
+ //    tft_fillScreen(0xffff);
+ //    Vector2 a = {3, 4};
+ //    Vector2 b = {1, 7};
 
-    idx = 0;
+ //    Vector2 test = VECTOR.add(a, b);
 
-	sprintf(buffer, "UP");
-	tft_setTextColor(0x0000);
-	tft_setCursor(10, 10);
-	tft_writeString(buffer);
+ //    idx = 0;
 
-	tft_fillScreen(0x0000);
+	// sprintf(buffer, "UP");
+	// tft_setTextColor(0x0000);
+	// tft_setCursor(10, 10);
+	// tft_writeString(buffer);
+
+	// tft_fillScreen(0x0000);
 
 
    while (1) {

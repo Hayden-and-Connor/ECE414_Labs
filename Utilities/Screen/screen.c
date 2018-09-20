@@ -1,4 +1,15 @@
-#include "Utilities/Screen/screen.h"
+#ifndef SCREEN_C
+#define SCREEN_C
+
+#include "Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.h"
+#include "Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c"
+
+#include <plib.h>
+#include <xc.h>
+#include "Utilities/Screen/adc_intf.h"
+#include "Utilities/Screen/TouchScreen.h"
+
+#include "Utilities/vector.c"
 
 #define SCREEN_WIDTH	320
 #define SCREEN_HEIGHT	240
@@ -38,7 +49,7 @@ static void on_touch_up(click_handler handler) {
 	up_listeners_size ++;
 }
 
-static void init() {
+static void screen_init() {
 	ANSELA = 0;
 	ANSELB = 0;
 	
@@ -103,6 +114,8 @@ static void listen() {
 	previous_state = current_state;
 }
 
+char buffer[64];
+
 // declare an interface for talking with this module
 // (lets us call functions with the dot operator, which 
 // helps keep the global namespace clean and aids in debugging)
@@ -112,12 +125,15 @@ typedef struct {
 	void (*on_touch_up)(click_handler);
 	void (*on_touch_down)(click_handler);
 	void (*listen)();
+	// char buffer[64];
 } screen_interface;
 
 screen_interface SCREEN = { 
 	&new_getPoint, 
-	&init,
+	&screen_init,
 	&on_touch_up,
 	&on_touch_down,
 	&listen
 };
+
+#endif
