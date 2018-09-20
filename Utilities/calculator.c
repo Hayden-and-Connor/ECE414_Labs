@@ -1,7 +1,7 @@
 #ifndef CALCULATOR_C
 #define CALCULATOR_C
 
-#include <stdlib>
+// #include <stdlib>
 
 // OPERATOR MACROS
 #define ADD '+'
@@ -36,8 +36,8 @@ typedef struct{
 } calculator;
 
 calculator CALCULATOR = {
-	&display;
-	&state;
+	&display,
+	&state
 };
 
 void init_calculator(){
@@ -65,7 +65,7 @@ void add_digit(int param_index, int digit){
 	// valid entry
 	param[param_index] *= 10;
 	param[param_index] += digit;
-	sprint(display, "%d", param[param_index]); // update display str in mem
+	sprintf(display, "%d", param[param_index]); // update display str in mem
 }
 
 void clear_param(int param_index){
@@ -86,13 +86,13 @@ void digit_pressed(int digit){
 
 // performs calcuation with current operator and stores in param[0]
 void calculate(){
-	if(c->operator == ADD){
+	if(operator == ADD){
 		param[0] += param[1];
-	} else if(c->operator == SUBTRACT){
+	} else if(operator == SUBTRACT){
 		param[0] -= param[1];
-	} else if(c->operator == MULTIPLY){
+	} else if(operator == MULTIPLY){
 		param[0] *= param[1];
-	} else if(c->operator == DIVIDE){
+	} else if(operator == DIVIDE){
 		param[0] /= param[1];
 	}
 }

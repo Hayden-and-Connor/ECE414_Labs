@@ -30,9 +30,9 @@ void log_click(click_event* event){
 
 	tft_setCursor(10, 100);  // Upper Left Hand Corner
 	tft_setTextColor(0x0000);  tft_setTextSize(2);
-	sprintf(buffer, "last touch (%d, %d) calc = %s", 
-		event -> position.x, 
-		event -> position.y,
+	sprintf(buffer, "calc = %s", 
+		// event -> position.x, 
+		// event -> position.y,
 		CALCULATOR.display
 	);
 
@@ -45,7 +45,7 @@ void main() {
 	// SCREEN.on_touch_up( &clear );
 	// SCREEN.on_touch_down( &fill );
 
-	// SCREEN.on_touch_down( &log_click );
+	SCREEN.on_touch_down( &log_click );
 
     uint32_t i, idx;
     

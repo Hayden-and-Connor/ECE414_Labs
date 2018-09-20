@@ -9,7 +9,7 @@ typedef struct button_struct {
 	Vector2 position;
 	Vector2 size;
 
-	char label;
+	char label[3];
 
 	click_handler onclick;
 } button;
@@ -58,13 +58,13 @@ void render_button(button* this) {
 	);
 
 	//label
-	sprintf(buffer, "asdfasdfasdfasdfasdfadsfa");
+	sprintf(buffer, this -> label);
 	tft_setCursor(
 		this -> position.x + (this -> size.x * .5),
 		this -> position.y + (this -> size.y * .5)
 	);
-	tft_setCursor(100, 100);
-	tft_setTextColor(0x0000);
+	// tft_setCursor(100, 100);
+	tft_setTextColor(0xffff); tft_setTextSize(4);
 	tft_writeString(buffer);
 }
 
