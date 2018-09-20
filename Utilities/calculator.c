@@ -50,6 +50,7 @@ void init_calculator(){
 	for(i = 0; i < MAX_DISPLAY_CHAR; i++){
 		display[i] = '\0';
 	}
+	sprintf(display, "%d", param[0]); 
 }
 
 void add_digit(int param_index, int digit){
@@ -72,6 +73,7 @@ void digit_pressed(int digit){
 	if(state & 2){
 		// override state - clear
 		clear_param(state & 1);
+		state &= ~0x2;
 	} 
 	if(state & 1){
 		add_digit(1, digit);

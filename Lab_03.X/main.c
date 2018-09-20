@@ -67,7 +67,55 @@ void main() {
 	// tft_writeString(buffer);
 
 	// tft_fillScreen(0x0000);
+    
     init_calculator();
+
+    //////////
+    //////////
+    // CALC TESTS
+    //////////
+    //////////
+    // Test digit input param[0]
+    // init_calculator();
+    // digit_pressed(1);
+    // digit_pressed(2);
+    // digit_pressed(3);
+    // digit_pressed(4);
+    // digit_pressed(5);
+    // digit_pressed(6);
+    // digit_pressed(7);
+    // digit_pressed(8);
+    // digit_pressed(9);
+    // digit_pressed(0);
+
+    // // TEST digit input param[1]
+    // operator_pressed('+');
+    // digit_pressed(9);
+    // digit_pressed(1);
+    // digit_pressed(1);
+    // digit_pressed(2);
+    // digit_pressed(2);
+    // digit_pressed(8);
+
+    // init_calculator();
+    // digit_pressed(2);
+    // operator_pressed('+');
+    // digit_pressed(3);
+    // operator_pressed('='); // 5
+    // operator_pressed('='); // 8
+    // operator_pressed('*'); 
+    // operator_pressed('='); // 64
+    // operator_pressed('-');
+    // operator_pressed('='); // 0
+    // operator_pressed('='); // -64
+    // operator_pressed('/');
+    // digit_pressed(3);
+    // digit_pressed(2); // 32
+    // operator_pressed('='); // -2
+    // operator_pressed('/');
+    // operator_pressed('='); // 1
+
+
 
    while (1) {
 		SCREEN.listen();
@@ -86,10 +134,10 @@ void main() {
 
 		// // Draw some text
 		// tft_setCursor(10, 10);  // Upper Left Hand Corner
-		// // tft_setTextColor(0x0000);  tft_setTextSize(2);
+		// tft_setTextColor(0x0000);  tft_setTextSize(2);
 		// // sprintf(buffer, "hello (%d, %d) + (%d, %d) = (%d, %d)", a.x, a.y, b.x, b.y, test.x, test.y);
-
-		// tft_writeString(buffer);
+		// tft_writeString(CALCULATOR.display);
+		// // tft_writeString(buffer);
 
 		// tft_setCursor(10, 100);  // Upper Left Hand Corner
 		// tft_setTextColor(0xffff); tft_setTextSize(2);
