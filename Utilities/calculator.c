@@ -115,40 +115,4 @@ void operator_pressed(char op){
 	}
 }
 
-// void clear_entry(){
-
-// }
-
-// void clear_pressed(){
-
-// }
-
-
-
-// void digit_press(int digit){
-// 	if(operator == NULL){
-// 		&
-// 	}
-// }
-
-// void add_operator(char operator){
-// 	c->operator = operator;
-// }
-
-
-
-// void clear_param(int param_index){
-// 	c->param[param_index] = NULL;
-// }
-
-// void clear_operator(){
-// 	c->operator = NULL;
-// }
-
-// void clean_calculator(){
-// 	clear_param(c, 0);
-// 	clear_param(c, 1);
-// 	clear_operator(c);
-// }
-
 #endif
