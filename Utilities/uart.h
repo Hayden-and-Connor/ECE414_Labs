@@ -19,6 +19,8 @@ typedef struct uart_interface {
 
 	int (*write_ready)();
 	int (*read_ready)();
+
+	void (*write_string)(char[]);
 } uart_interface;
 
 uart_interface UART;

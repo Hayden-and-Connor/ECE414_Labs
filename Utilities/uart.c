@@ -61,6 +61,14 @@ static char nb_read() {
 	}
 }
 
+static void write_string(char[] input){
+	int index = 0;
+	while(input[index + 1] != '\0'){
+		busy_write(input[index]);
+		index ++;
+	}
+}
+
 uart_interface UART = {
 	&init,
 
@@ -71,5 +79,7 @@ uart_interface UART = {
 	&nb_read,
 
 	&write_ready,
-	&read_ready
+	&read_ready,
+
+	&write_string
 };
