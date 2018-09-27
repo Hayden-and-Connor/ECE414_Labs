@@ -36,8 +36,6 @@ static char busy_read(){
 			return U1RXREG;
 		}
 	}
-	// while(U1STA & (1 << 0)){}
-	// return U1RXREG;
 }
 
 static int write_ready(){
@@ -63,7 +61,7 @@ static char nb_read() {
 
 static void write_string(char input[]){
 	int index = 0;
-	while(input[index + 1] != '\0'){
+	while(input[index] != '\0'){
 		busy_write(input[index]);
 		index ++;
 	}
