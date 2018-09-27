@@ -10,8 +10,15 @@ void uart_test();
 
 typedef struct uart_interface {
 	void (*init)();
+
 	void (*busy_write)(char);
 	char (*busy_read)();
+
+	void (*nb_write)(char);
+	char (*nb_read)();
+
+	int (*write_ready)();
+	int (*read_ready)();
 } uart_interface;
 
 uart_interface UART;

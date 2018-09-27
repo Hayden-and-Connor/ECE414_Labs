@@ -40,8 +40,36 @@ static char busy_read(){
 	// return U1RXREG;
 }
 
+static int write_ready(){
+	return !(U1STA & (1 << 9));
+}
+
+static int read_ready(){
+	return (U1STA & (1 << 0));
+}
+
+static void nb_write(char input) {
+	if(U1STA & (1 << 9)) return;
+	U1TXREG = input;
+}
+
+static char nb_read() {
+	if(U1STA & (1 << 0)){
+		return U1RXREG;
+	} else {
+		return '\0';
+	}
+}
+
 uart_interface UART = {
 	&init,
+
 	&busy_write,
-	&busy_read
+	&busy_read,
+
+	&nb_write,
+	&nb_read,
+
+	&write_ready,
+	&read_ready
 };
