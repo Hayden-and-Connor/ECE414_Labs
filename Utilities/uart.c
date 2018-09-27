@@ -61,7 +61,7 @@ static char nb_read() {
 	}
 }
 
-static void write_string(char[] input){
+static void write_string(char input[]){
 	int index = 0;
 	while(input[index + 1] != '\0'){
 		busy_write(input[index]);

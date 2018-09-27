@@ -19,7 +19,7 @@ static void init(){
     mT1SetIntPriority(1);
     
     // !!! 3. Enable the T1 interrupt source
-    mT1IntEnable(1);
+   mT1IntEnable(1);
 }
 
 static int read(){
