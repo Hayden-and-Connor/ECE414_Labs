@@ -1,4 +1,5 @@
 /* 
+ * ECE 414
  * File:   main.c
  * Author: dodgeh
  *
