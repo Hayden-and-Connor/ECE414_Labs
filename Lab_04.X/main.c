@@ -1,8 +1,10 @@
 #include <stdlib.h>
 #include <p32xxxx.h>
 #include "Utilities/uart.h"
+// #include "Utilities/uart.c"
 #include <plib.h>
 
+// #include "test.h"
 
 // Configure clocks
 #pragma config FNOSC = FRCPLL, POSCMOD = OFF
@@ -13,59 +15,13 @@
 // #include "Utilities/gpio.c"
 
 void main( ) {
-	TRISA = ~0;
-	ANSELA = 0;
+	UART.init();
 
-	TRISB = ~0;
-	ANSELB = 0;
+	while(1){
+		char input = UART.busy_read();
+		UART.busy_write(input);
 
-	U1RXR = 0;
-	// RPB7R = 1;
-	RPA0R = 1; // set pin 4 to RPA0
-	U1BRG = 259;
-
-	// U1MODE = 8;
-	U1MODE &= ~(1 << 3);
-	U1STA |= ((1 << 12) | (1 << 10));
-	U1MODE |= (1 << 15);
-
-
-	// UART.init();
-	// initPin(0, OUTPUT);
-
-	test();
-
-	while(1) {
-		UART.write('c');
-		UART.write('\n');
-		UART.write('\r');
-
-	// 	while(1) {
-	// 		int isReady = !(U1STA & (1 << 9)); 
-
-	// 		if(isReady) {
-	// 			U1TXREG = 'c';
-	// 			break;
-	// 		}
-	// 	}
-	// 	while(1) {
-	// 		int isReady = !(U1STA & (1 << 9)); 
-
-	// 		if(isReady) {
-	// 			U1TXREG = '\n';
-	// 			break;
-	// 		}
-	// 	}
-	// 	while(1) {
-	// 		int isReady = !(U1STA & (1 << 9)); 
-
-	// 		if(isReady) {
-	// 			U1TXREG = '\r';
-	// 			break;
-	// 		}
-	// 	}
-	} 
-		// UART.write(0x55);
-		// UART.write('\n');
-		// UART.write('\r');
+		UART.busy_write('\r');
+		UART.busy_write('\n');
+	}
 }
