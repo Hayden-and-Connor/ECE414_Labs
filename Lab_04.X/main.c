@@ -4,8 +4,6 @@
 // #include "Utilities/uart.c"
 #include <plib.h>
 
-// #include "test.h"
-
 // Configure clocks
 #pragma config FNOSC = FRCPLL, POSCMOD = OFF
 #pragma config FPLLIDIV = DIV_2, FPLLMUL = MUL_20 //40 MHz
