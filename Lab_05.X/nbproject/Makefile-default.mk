@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c ../Utilities/calculator.c ../Utilities/gpio.c ../Utilities/Screen/adc_intf.c ../Utilities/Screen/event.c ../Utilities/Screen/screen.c ../Utilities/Screen/TouchScreen.c ../Utilities/timer_ms/timer_ms.c ../Utilities/uart.c ../Utilities/vector.c main.c ../Utilities/KeyPad/keypad.c
+SOURCEFILES_QUOTED_IF_SPACED=../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c ../Utilities/KeyPad/keypad.c ../Utilities/Screen/adc_intf.c ../Utilities/Screen/event.c ../Utilities/Screen/screen.c ../Utilities/Screen/TouchScreen.c ../Utilities/timer_ms/timer_ms.c ../Utilities/gpio.c ../Utilities/uart.c ../Utilities/vector.c main.c ../Utilities/Analog_In/analog_in.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1137048943/glcdfont.o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ${OBJECTDIR}/_ext/1137048943/tft_master.o ${OBJECTDIR}/_ext/1174900389/calculator.o ${OBJECTDIR}/_ext/1174900389/gpio.o ${OBJECTDIR}/_ext/980479936/adc_intf.o ${OBJECTDIR}/_ext/980479936/event.o ${OBJECTDIR}/_ext/980479936/screen.o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ${OBJECTDIR}/_ext/86135020/timer_ms.o ${OBJECTDIR}/_ext/1174900389/uart.o ${OBJECTDIR}/_ext/1174900389/vector.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/753481992/keypad.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1137048943/glcdfont.o.d ${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d ${OBJECTDIR}/_ext/1137048943/tft_master.o.d ${OBJECTDIR}/_ext/1174900389/calculator.o.d ${OBJECTDIR}/_ext/1174900389/gpio.o.d ${OBJECTDIR}/_ext/980479936/adc_intf.o.d ${OBJECTDIR}/_ext/980479936/event.o.d ${OBJECTDIR}/_ext/980479936/screen.o.d ${OBJECTDIR}/_ext/980479936/TouchScreen.o.d ${OBJECTDIR}/_ext/86135020/timer_ms.o.d ${OBJECTDIR}/_ext/1174900389/uart.o.d ${OBJECTDIR}/_ext/1174900389/vector.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/753481992/keypad.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1137048943/glcdfont.o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ${OBJECTDIR}/_ext/1137048943/tft_master.o ${OBJECTDIR}/_ext/753481992/keypad.o ${OBJECTDIR}/_ext/980479936/adc_intf.o ${OBJECTDIR}/_ext/980479936/event.o ${OBJECTDIR}/_ext/980479936/screen.o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ${OBJECTDIR}/_ext/86135020/timer_ms.o ${OBJECTDIR}/_ext/1174900389/gpio.o ${OBJECTDIR}/_ext/1174900389/uart.o ${OBJECTDIR}/_ext/1174900389/vector.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1872510752/analog_in.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1137048943/glcdfont.o.d ${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d ${OBJECTDIR}/_ext/1137048943/tft_master.o.d ${OBJECTDIR}/_ext/753481992/keypad.o.d ${OBJECTDIR}/_ext/980479936/adc_intf.o.d ${OBJECTDIR}/_ext/980479936/event.o.d ${OBJECTDIR}/_ext/980479936/screen.o.d ${OBJECTDIR}/_ext/980479936/TouchScreen.o.d ${OBJECTDIR}/_ext/86135020/timer_ms.o.d ${OBJECTDIR}/_ext/1174900389/gpio.o.d ${OBJECTDIR}/_ext/1174900389/uart.o.d ${OBJECTDIR}/_ext/1174900389/vector.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/1872510752/analog_in.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1137048943/glcdfont.o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ${OBJECTDIR}/_ext/1137048943/tft_master.o ${OBJECTDIR}/_ext/1174900389/calculator.o ${OBJECTDIR}/_ext/1174900389/gpio.o ${OBJECTDIR}/_ext/980479936/adc_intf.o ${OBJECTDIR}/_ext/980479936/event.o ${OBJECTDIR}/_ext/980479936/screen.o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ${OBJECTDIR}/_ext/86135020/timer_ms.o ${OBJECTDIR}/_ext/1174900389/uart.o ${OBJECTDIR}/_ext/1174900389/vector.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/753481992/keypad.o
+OBJECTFILES=${OBJECTDIR}/_ext/1137048943/glcdfont.o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ${OBJECTDIR}/_ext/1137048943/tft_master.o ${OBJECTDIR}/_ext/753481992/keypad.o ${OBJECTDIR}/_ext/980479936/adc_intf.o ${OBJECTDIR}/_ext/980479936/event.o ${OBJECTDIR}/_ext/980479936/screen.o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ${OBJECTDIR}/_ext/86135020/timer_ms.o ${OBJECTDIR}/_ext/1174900389/gpio.o ${OBJECTDIR}/_ext/1174900389/uart.o ${OBJECTDIR}/_ext/1174900389/vector.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1872510752/analog_in.o
 
 # Source Files
-SOURCEFILES=../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c ../Utilities/calculator.c ../Utilities/gpio.c ../Utilities/Screen/adc_intf.c ../Utilities/Screen/event.c ../Utilities/Screen/screen.c ../Utilities/Screen/TouchScreen.c ../Utilities/timer_ms/timer_ms.c ../Utilities/uart.c ../Utilities/vector.c main.c ../Utilities/KeyPad/keypad.c
+SOURCEFILES=../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c ../Utilities/KeyPad/keypad.c ../Utilities/Screen/adc_intf.c ../Utilities/Screen/event.c ../Utilities/Screen/screen.c ../Utilities/Screen/TouchScreen.c ../Utilities/timer_ms/timer_ms.c ../Utilities/gpio.c ../Utilities/uart.c ../Utilities/vector.c main.c ../Utilities/Analog_In/analog_in.c
 
 
 CFLAGS=
@@ -110,170 +110,170 @@ ${OBJECTDIR}/_ext/1137048943/glcdfont.o: ../Utilities/Adafruit_2_4_LCD_Serial_Li
 	@${MKDIR} "${OBJECTDIR}/_ext/1137048943" 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/glcdfont.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/glcdfont.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/glcdfont.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/glcdfont.o.d" -o ${OBJECTDIR}/_ext/1137048943/glcdfont.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/glcdfont.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/glcdfont.o.d" -o ${OBJECTDIR}/_ext/1137048943/glcdfont.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
 	
 ${OBJECTDIR}/_ext/1137048943/tft_gfx.o: ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1137048943" 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/tft_gfx.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d" -o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d" -o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
 	
 ${OBJECTDIR}/_ext/1137048943/tft_master.o: ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1137048943" 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/tft_master.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/tft_master.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/tft_master.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/tft_master.o.d" -o ${OBJECTDIR}/_ext/1137048943/tft_master.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1174900389/calculator.o: ../Utilities/calculator.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/calculator.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/calculator.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/calculator.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/calculator.o.d" -o ${OBJECTDIR}/_ext/1174900389/calculator.o ../Utilities/calculator.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1174900389/gpio.o: ../Utilities/gpio.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/gpio.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/gpio.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/gpio.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/gpio.o.d" -o ${OBJECTDIR}/_ext/1174900389/gpio.o ../Utilities/gpio.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/980479936/adc_intf.o: ../Utilities/Screen/adc_intf.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
-	@${RM} ${OBJECTDIR}/_ext/980479936/adc_intf.o.d 
-	@${RM} ${OBJECTDIR}/_ext/980479936/adc_intf.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/adc_intf.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/adc_intf.o.d" -o ${OBJECTDIR}/_ext/980479936/adc_intf.o ../Utilities/Screen/adc_intf.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/980479936/event.o: ../Utilities/Screen/event.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
-	@${RM} ${OBJECTDIR}/_ext/980479936/event.o.d 
-	@${RM} ${OBJECTDIR}/_ext/980479936/event.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/event.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/event.o.d" -o ${OBJECTDIR}/_ext/980479936/event.o ../Utilities/Screen/event.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/980479936/screen.o: ../Utilities/Screen/screen.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
-	@${RM} ${OBJECTDIR}/_ext/980479936/screen.o.d 
-	@${RM} ${OBJECTDIR}/_ext/980479936/screen.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/screen.o.d" -o ${OBJECTDIR}/_ext/980479936/screen.o ../Utilities/Screen/screen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/980479936/TouchScreen.o: ../Utilities/Screen/TouchScreen.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
-	@${RM} ${OBJECTDIR}/_ext/980479936/TouchScreen.o.d 
-	@${RM} ${OBJECTDIR}/_ext/980479936/TouchScreen.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/TouchScreen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/TouchScreen.o.d" -o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ../Utilities/Screen/TouchScreen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/86135020/timer_ms.o: ../Utilities/timer_ms/timer_ms.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/86135020" 
-	@${RM} ${OBJECTDIR}/_ext/86135020/timer_ms.o.d 
-	@${RM} ${OBJECTDIR}/_ext/86135020/timer_ms.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/86135020/timer_ms.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/86135020/timer_ms.o.d" -o ${OBJECTDIR}/_ext/86135020/timer_ms.o ../Utilities/timer_ms/timer_ms.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1174900389/uart.o: ../Utilities/uart.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/uart.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/uart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/uart.o.d" -o ${OBJECTDIR}/_ext/1174900389/uart.o ../Utilities/uart.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1174900389/vector.o: ../Utilities/vector.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/vector.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/vector.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/vector.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/vector.o.d" -o ${OBJECTDIR}/_ext/1174900389/vector.o ../Utilities/vector.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/tft_master.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/tft_master.o.d" -o ${OBJECTDIR}/_ext/1137048943/tft_master.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
 	
 ${OBJECTDIR}/_ext/753481992/keypad.o: ../Utilities/KeyPad/keypad.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/753481992" 
 	@${RM} ${OBJECTDIR}/_ext/753481992/keypad.o.d 
 	@${RM} ${OBJECTDIR}/_ext/753481992/keypad.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/753481992/keypad.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/753481992/keypad.o.d" -o ${OBJECTDIR}/_ext/753481992/keypad.o ../Utilities/KeyPad/keypad.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/753481992/keypad.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/753481992/keypad.o.d" -o ${OBJECTDIR}/_ext/753481992/keypad.o ../Utilities/KeyPad/keypad.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/980479936/adc_intf.o: ../Utilities/Screen/adc_intf.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/adc_intf.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/adc_intf.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/adc_intf.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/adc_intf.o.d" -o ${OBJECTDIR}/_ext/980479936/adc_intf.o ../Utilities/Screen/adc_intf.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/980479936/event.o: ../Utilities/Screen/event.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/event.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/event.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/event.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/event.o.d" -o ${OBJECTDIR}/_ext/980479936/event.o ../Utilities/Screen/event.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/980479936/screen.o: ../Utilities/Screen/screen.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/screen.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/screen.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/screen.o.d" -o ${OBJECTDIR}/_ext/980479936/screen.o ../Utilities/Screen/screen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/980479936/TouchScreen.o: ../Utilities/Screen/TouchScreen.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/TouchScreen.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/TouchScreen.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/TouchScreen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/TouchScreen.o.d" -o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ../Utilities/Screen/TouchScreen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/86135020/timer_ms.o: ../Utilities/timer_ms/timer_ms.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/86135020" 
+	@${RM} ${OBJECTDIR}/_ext/86135020/timer_ms.o.d 
+	@${RM} ${OBJECTDIR}/_ext/86135020/timer_ms.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/86135020/timer_ms.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/86135020/timer_ms.o.d" -o ${OBJECTDIR}/_ext/86135020/timer_ms.o ../Utilities/timer_ms/timer_ms.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/1174900389/gpio.o: ../Utilities/gpio.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/gpio.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/gpio.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/gpio.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/gpio.o.d" -o ${OBJECTDIR}/_ext/1174900389/gpio.o ../Utilities/gpio.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/1174900389/uart.o: ../Utilities/uart.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/uart.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/uart.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/uart.o.d" -o ${OBJECTDIR}/_ext/1174900389/uart.o ../Utilities/uart.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/1174900389/vector.o: ../Utilities/vector.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/vector.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/vector.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/vector.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/vector.o.d" -o ${OBJECTDIR}/_ext/1174900389/vector.o ../Utilities/vector.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/1872510752/analog_in.o: ../Utilities/Analog_In/analog_in.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1872510752" 
+	@${RM} ${OBJECTDIR}/_ext/1872510752/analog_in.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1872510752/analog_in.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1872510752/analog_in.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DPKOBSKDEPlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1872510752/analog_in.o.d" -o ${OBJECTDIR}/_ext/1872510752/analog_in.o ../Utilities/Analog_In/analog_in.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
 	
 else
 ${OBJECTDIR}/_ext/1137048943/glcdfont.o: ../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1137048943" 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/glcdfont.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/glcdfont.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/glcdfont.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/glcdfont.o.d" -o ${OBJECTDIR}/_ext/1137048943/glcdfont.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/glcdfont.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/glcdfont.o.d" -o ${OBJECTDIR}/_ext/1137048943/glcdfont.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/glcdfont.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
 	
 ${OBJECTDIR}/_ext/1137048943/tft_gfx.o: ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1137048943" 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/tft_gfx.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d" -o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/tft_gfx.o.d" -o ${OBJECTDIR}/_ext/1137048943/tft_gfx.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_gfx.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
 	
 ${OBJECTDIR}/_ext/1137048943/tft_master.o: ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1137048943" 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/tft_master.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1137048943/tft_master.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/tft_master.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/tft_master.o.d" -o ${OBJECTDIR}/_ext/1137048943/tft_master.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1174900389/calculator.o: ../Utilities/calculator.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/calculator.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/calculator.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/calculator.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/calculator.o.d" -o ${OBJECTDIR}/_ext/1174900389/calculator.o ../Utilities/calculator.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1174900389/gpio.o: ../Utilities/gpio.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/gpio.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/gpio.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/gpio.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/gpio.o.d" -o ${OBJECTDIR}/_ext/1174900389/gpio.o ../Utilities/gpio.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/980479936/adc_intf.o: ../Utilities/Screen/adc_intf.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
-	@${RM} ${OBJECTDIR}/_ext/980479936/adc_intf.o.d 
-	@${RM} ${OBJECTDIR}/_ext/980479936/adc_intf.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/adc_intf.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/adc_intf.o.d" -o ${OBJECTDIR}/_ext/980479936/adc_intf.o ../Utilities/Screen/adc_intf.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/980479936/event.o: ../Utilities/Screen/event.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
-	@${RM} ${OBJECTDIR}/_ext/980479936/event.o.d 
-	@${RM} ${OBJECTDIR}/_ext/980479936/event.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/event.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/event.o.d" -o ${OBJECTDIR}/_ext/980479936/event.o ../Utilities/Screen/event.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/980479936/screen.o: ../Utilities/Screen/screen.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
-	@${RM} ${OBJECTDIR}/_ext/980479936/screen.o.d 
-	@${RM} ${OBJECTDIR}/_ext/980479936/screen.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/screen.o.d" -o ${OBJECTDIR}/_ext/980479936/screen.o ../Utilities/Screen/screen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/980479936/TouchScreen.o: ../Utilities/Screen/TouchScreen.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
-	@${RM} ${OBJECTDIR}/_ext/980479936/TouchScreen.o.d 
-	@${RM} ${OBJECTDIR}/_ext/980479936/TouchScreen.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/TouchScreen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/TouchScreen.o.d" -o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ../Utilities/Screen/TouchScreen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/86135020/timer_ms.o: ../Utilities/timer_ms/timer_ms.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/86135020" 
-	@${RM} ${OBJECTDIR}/_ext/86135020/timer_ms.o.d 
-	@${RM} ${OBJECTDIR}/_ext/86135020/timer_ms.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/86135020/timer_ms.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/86135020/timer_ms.o.d" -o ${OBJECTDIR}/_ext/86135020/timer_ms.o ../Utilities/timer_ms/timer_ms.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1174900389/uart.o: ../Utilities/uart.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/uart.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/uart.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/uart.o.d" -o ${OBJECTDIR}/_ext/1174900389/uart.o ../Utilities/uart.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1174900389/vector.o: ../Utilities/vector.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/vector.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1174900389/vector.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/vector.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/vector.o.d" -o ${OBJECTDIR}/_ext/1174900389/vector.o ../Utilities/vector.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1137048943/tft_master.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1137048943/tft_master.o.d" -o ${OBJECTDIR}/_ext/1137048943/tft_master.o ../Utilities/Adafruit_2_4_LCD_Serial_Library/tft_master.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
 	
 ${OBJECTDIR}/_ext/753481992/keypad.o: ../Utilities/KeyPad/keypad.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/753481992" 
 	@${RM} ${OBJECTDIR}/_ext/753481992/keypad.o.d 
 	@${RM} ${OBJECTDIR}/_ext/753481992/keypad.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/753481992/keypad.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/753481992/keypad.o.d" -o ${OBJECTDIR}/_ext/753481992/keypad.o ../Utilities/KeyPad/keypad.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/753481992/keypad.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/753481992/keypad.o.d" -o ${OBJECTDIR}/_ext/753481992/keypad.o ../Utilities/KeyPad/keypad.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/980479936/adc_intf.o: ../Utilities/Screen/adc_intf.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/adc_intf.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/adc_intf.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/adc_intf.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/adc_intf.o.d" -o ${OBJECTDIR}/_ext/980479936/adc_intf.o ../Utilities/Screen/adc_intf.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/980479936/event.o: ../Utilities/Screen/event.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/event.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/event.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/event.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/event.o.d" -o ${OBJECTDIR}/_ext/980479936/event.o ../Utilities/Screen/event.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/980479936/screen.o: ../Utilities/Screen/screen.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/screen.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/screen.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/screen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/screen.o.d" -o ${OBJECTDIR}/_ext/980479936/screen.o ../Utilities/Screen/screen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/980479936/TouchScreen.o: ../Utilities/Screen/TouchScreen.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/980479936" 
+	@${RM} ${OBJECTDIR}/_ext/980479936/TouchScreen.o.d 
+	@${RM} ${OBJECTDIR}/_ext/980479936/TouchScreen.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/980479936/TouchScreen.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/980479936/TouchScreen.o.d" -o ${OBJECTDIR}/_ext/980479936/TouchScreen.o ../Utilities/Screen/TouchScreen.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/86135020/timer_ms.o: ../Utilities/timer_ms/timer_ms.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/86135020" 
+	@${RM} ${OBJECTDIR}/_ext/86135020/timer_ms.o.d 
+	@${RM} ${OBJECTDIR}/_ext/86135020/timer_ms.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/86135020/timer_ms.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/86135020/timer_ms.o.d" -o ${OBJECTDIR}/_ext/86135020/timer_ms.o ../Utilities/timer_ms/timer_ms.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/1174900389/gpio.o: ../Utilities/gpio.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/gpio.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/gpio.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/gpio.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/gpio.o.d" -o ${OBJECTDIR}/_ext/1174900389/gpio.o ../Utilities/gpio.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/1174900389/uart.o: ../Utilities/uart.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/uart.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/uart.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/uart.o.d" -o ${OBJECTDIR}/_ext/1174900389/uart.o ../Utilities/uart.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/1174900389/vector.o: ../Utilities/vector.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1174900389" 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/vector.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1174900389/vector.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1174900389/vector.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1174900389/vector.o.d" -o ${OBJECTDIR}/_ext/1174900389/vector.o ../Utilities/vector.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
+	
+${OBJECTDIR}/_ext/1872510752/analog_in.o: ../Utilities/Analog_In/analog_in.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1872510752" 
+	@${RM} ${OBJECTDIR}/_ext/1872510752/analog_in.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1872510752/analog_in.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1872510752/analog_in.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../" -MMD -MF "${OBJECTDIR}/_ext/1872510752/analog_in.o.d" -o ${OBJECTDIR}/_ext/1872510752/analog_in.o ../Utilities/Analog_In/analog_in.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -D_SUPPRESS_PLIB_WARNING
 	
 endif
 
@@ -288,12 +288,12 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/Lab_05.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -g -mdebugger -DPKOBSKDEPlatformTool=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Lab_05.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)   -mreserve=data@0x0:0x1FC -mreserve=boot@0x1FC00490:0x1FC00BEF  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D=__DEBUG_D,--defsym=PKOBSKDEPlatformTool=1,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
+	${MP_CC} $(MP_EXTRA_LD_PRE) -g -mdebugger -DPKOBSKDEPlatformTool=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Lab_05.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  -D_SUPPRESS_PLIB_WARNING $(COMPARISON_BUILD)   -mreserve=data@0x0:0x1FC -mreserve=boot@0x1FC00490:0x1FC00BEF  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D=__DEBUG_D,--defsym=PKOBSKDEPlatformTool=1,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
 	
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/Lab_05.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Lab_05.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Lab_05.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  -D_SUPPRESS_PLIB_WARNING $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
 	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/Lab_05.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
 endif
 
