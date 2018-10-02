@@ -1,9 +1,5 @@
 #include "uart.h"
 
-void uart_test(){
-
-}
-
 static void init(){
 	TRISA = ~0;
 	ANSELA = 0;
@@ -65,6 +61,12 @@ static void write_string(char input[]){
 		busy_write(input[index]);
 		index ++;
 	}
+}
+
+
+
+static void listen(){
+	
 }
 
 uart_interface UART = {

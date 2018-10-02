@@ -8,7 +8,7 @@
  *	The simplest way to interact with this module is by calling UART.write_string()
  * 	With the desired value to be printed
  *
- *	NOTE:	it is important to call UART.init() in your programs main method before
+ *	NOTE:	it is important to call UART.init() in your program's main method before
  *			trying to interact with this module 	
  */
 
