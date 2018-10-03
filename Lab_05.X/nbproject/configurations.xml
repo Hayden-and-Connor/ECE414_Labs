@@ -50,6 +50,8 @@
       <itemPath>../Utilities/uart.h</itemPath>
       <itemPath>../Utilities/vector.c</itemPath>
       <itemPath>../Utilities/event_handler.h</itemPath>
+      <itemPath>../Utilities/event_loop.c</itemPath>
+      <itemPath>../Utilities/event_loop.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -100,6 +102,18 @@
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <item path="../Utilities/calculator.c" ex="true" overriding="false">
+        <C32>
+        </C32>
+        <C32-AR>
+        </C32-AR>
+        <C32-AS>
+        </C32-AS>
+        <C32-LD>
+        </C32-LD>
+        <C32CPP>
+        </C32CPP>
+        <C32Global>
+        </C32Global>
       </item>
       <C32>
         <property key="additional-warnings" value="false"/>
