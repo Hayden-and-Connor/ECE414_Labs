@@ -88,16 +88,6 @@ static void listen(){
 			listeners[i](read_buffer);
 		}
 	}
-
-	// if(next == '\n') {
-	// 	read_buffer[read_buffer_index + 1] = 0;
-	// 	int i;
-		// for(i=0; i<listeners_index; i++) {
-		// 	listeners[i](read_buffer);
-		// }
-
-	// 	sprintf("", read_buffer);
-	// }
 }
 
 uart_interface UART = {
