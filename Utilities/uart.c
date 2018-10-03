@@ -63,10 +63,41 @@ static void write_string(char input[]){
 	}
 }
 
+#define MAX_LISTENERS 10
+static int listeners_index = 0;
+static uart_event_listener listeners[MAX_LISTENERS];
 
+static void add_event_listener(uart_event_listener input) {
+	if(listeners_index > MAX_LISTENERS) return;
+
+	listeners[listeners_index] = input;
+	listeners_index ++;
+}
 
 static void listen(){
-	
+	static int read_buffer_index = 0;
+	static char read_buffer[64];
+
+	char next = nb_read();
+	if(next) {
+		read_buffer[read_buffer_index] = next;
+		read_buffer_index ++;
+
+		int i;
+		for(i=0; i<listeners_index; i++) {
+			listeners[i](read_buffer);
+		}
+	}
+
+	// if(next == '\n') {
+	// 	read_buffer[read_buffer_index + 1] = 0;
+	// 	int i;
+		// for(i=0; i<listeners_index; i++) {
+		// 	listeners[i](read_buffer);
+		// }
+
+	// 	sprintf("", read_buffer);
+	// }
 }
 
 uart_interface UART = {
@@ -81,5 +112,8 @@ uart_interface UART = {
 	&write_ready,
 	&read_ready,
 
-	&write_string
+	&write_string,
+
+	&add_event_listener,
+	&listen
 };

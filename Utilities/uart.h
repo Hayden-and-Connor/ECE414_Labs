@@ -18,6 +18,9 @@
 #include <p32xxxx.h>
 #include <inttypes.h>
 #include <plib.h>
+#include <stdio.h>
+
+typedef void (*uart_event_listener)(char*);
 
 //Defines an interface for talking with the UART module
 typedef struct uart_interface {
@@ -34,6 +37,10 @@ typedef struct uart_interface {
 	int (*read_ready)();	// int UART.read_ready()
 
 	void (*write_string)(char[]);	// int UART.write_string(char[])
+
+	void (*add_event_listener)(uart_event_listener); // void UART.add_event_listener(uart_event_listener)
+	void (*listen)();
+
 } uart_interface;
 
 // instance of the interface we will be using
