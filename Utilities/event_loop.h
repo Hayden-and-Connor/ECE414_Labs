@@ -9,22 +9,14 @@ typedef struct _event_handler {
 	event_listener listeners[MAX_LISTENERS];
 } event_handler;
 
-event_handler* new_event_handler(){
-	event_handler* output = malloc( sizeof(event_handler) );
-	output -> size = 0;
-}
+typedef struct _event_loop_interface {
+	event_handler* (*new_handler)();
+	void (*on)(event_handler*, event_listener);
+	void (*emit)(event_handler*, void*);
+} event_loop_interface;
 
-void on(event_handler* event, event_listener listener){
-	if(event -> size > MAX_LISTENERS) return;
+event_loop_interface EVENT_LOOP;
 
-	event -> listeners[event -> size] = listener;
-	event -> size ++;
-}
-void emit(event_handler* event, void* value){
-	int i;
-	for(i=0; i < event->size; i++) {
-		event->listeners[i](value);
-	}
-}
+// void on(event_handler* event, event_listener listener);
 
 #endif

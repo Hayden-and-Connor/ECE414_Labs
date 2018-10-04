@@ -1,7 +1,7 @@
 /**	UART
  *	Authors: Hayden Dodge, Connor Winiarczyk
  *
- *	this module provides functions for interacting with the build in 
+ *	this module provides functions for interacting with the built in 
  *	PIC UART hardware. Methods exist for reading and writing single characters
  *	in both blocking (busy_xxx()) and non-blocking (nb_xxx()) varieties.
  *
@@ -19,6 +19,16 @@
 #include <inttypes.h>
 #include <plib.h>
 #include <stdio.h>
+
+#include "event_loop.h"
+
+// typedef struct _event_handler {
+// 	int size;
+// 	event_listener listeners[MAX_LISTENERS];
+// } event_handler;
+
+event_handler* uart_char;
+
 
 typedef void (*uart_event_listener)(char*);
 
@@ -38,7 +48,6 @@ typedef struct uart_interface {
 
 	void (*write_string)(char[]);	// int UART.write_string(char[])
 
-	void (*add_event_listener)(uart_event_listener); // void UART.add_event_listener(uart_event_listener)
 	void (*listen)();
 
 } uart_interface;
