@@ -35,3 +35,21 @@ void main(){
 		UART.listen();
 	}
 }
+	// sprintf(write_buffer, "hello %d", test_event -> size);
+	// UART.write_string(write_buffer);
+
+// // working analog read
+// 	UART.init();
+// 	int i;
+
+// 	analog_in_init();
+// 	int32_t volt = 0;
+// 	while(1){
+// 		// volt = analog_in_read(9);
+// 		// sprintf(buffer, "%04d    \r \n");
+// 		// UART.write_string(buffer);
+// 		// for(i = 0; i < 1000000; i++){
+
+// 		// }
+// 	}
+// }
