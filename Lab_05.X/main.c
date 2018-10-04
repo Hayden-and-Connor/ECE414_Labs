@@ -25,6 +25,16 @@ char test = 'a';
 void main(){
 	UART.init();
 
+	// event_handler* test_event = new_event_handler();
+
+	// on(test_event, &handle_test_event);
+
+	// test_event -> listeners[0] = &handle_test_event;
+	// on(test_event, &handle_test_event);
+	// on(test_event, &handle_test_event);
+
+	// emit(test_event, NULL);
+
 	uart_test_linked();
 
 	EVENT_LOOP.on(uart_char, &print_char);
@@ -39,6 +49,39 @@ void main(){
 }
 	// sprintf(write_buffer, "hello %d", test_event -> size);
 	// UART.write_string(write_buffer);
+	ANSELB &= ~(1 << 13);
+	ANSELB &= ~(1 << 14);
+	TRISB |= (1 << 13);
+	TRISB |= (1 << 14);
+
+
+	sprintf(write_buffer, "Encoder test: \r \n");
+	UART.write_string(write_buffer);
+
+	int i, encoder_sub, encoder_sub_prev, dir, count;
+	count = 0;
+	while(1){
+		encoder_sub_prev = encoder_sub;
+		encoder_sub = (PORTB & (1 << 13)) >> 13;
+		encoder_sub |= (PORTB & (1 << 14)) >> 13;
+		
+		if(encoder_sub == 3){
+			if(encoder_sub_prev == 2){
+				count++;
+				sprintf(write_buffer, "%d \r \n", count);
+				UART.write_string(write_buffer);
+			} else if(encoder_sub_prev == 1){
+				count--;
+				sprintf(write_buffer, "%d \r \n", count);
+				UART.write_string(write_buffer);
+			}
+			
+		}
+		
+		for(i = 0; i < 1000; i++){
+
+		}
+	}
 
 // // working analog read
 // 	UART.init();
@@ -48,10 +91,11 @@ void main(){
 // 	int32_t volt = 0;
 // 	while(1){
 // 		// volt = analog_in_read(9);
-// 		// sprintf(buffer, "%04d    \r \n");
-// 		// UART.write_string(buffer);
+// 		// sprintf(write_buffer, "%04d    \r \n");
+// 		// UART.write_string(write_buffer);
 // 		// for(i = 0; i < 1000000; i++){
 
 // 		// }
 // 	}
-// }
+}
+
