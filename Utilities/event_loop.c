@@ -5,7 +5,7 @@ static event_handler* new_event_handler(){
 	output -> size = 0;
 }
 
-void on(event_handler* event, event_listener listener){
+static void on(event_handler* event, event_listener listener){
 	if(event -> size > MAX_LISTENERS) return;
 
 	event -> listeners[event -> size] = listener;

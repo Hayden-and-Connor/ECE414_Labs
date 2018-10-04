@@ -10,28 +10,28 @@
 #pragma config FWDTEN = OFF,  FSOSCEN = OFF, JTAGEN = OFF
 
 char write_buffer[64];
-void on_uart_value(char* value){
-	// sprintf(write_buffer, "test");
-	UART.write_string("test");
+
+void print_char(void* data) {
+	char value = *(char*)(data);
+
+	UART.busy_write(value);
 }
 
-void handle_test_event(void* data) {
-	UART.write_string("a test was called \n");
+void test_print(void* data) {
+	UART.write_string("test \n");
 }
 
+char test = 'a';
 void main(){
 	UART.init();
 
-	event_handler* test_event = new_event_handler();
+	uart_test_linked();
 
-	// on(test_event, &handle_test_event);
+	EVENT_LOOP.on(uart_char, &print_char);
+	EVENT_LOOP.emit(uart_char, &test);
 
-	// test_event -> listeners[0] = &handle_test_event;
-	on(test_event, &handle_test_event);
-	on(test_event, &handle_test_event);
 
-	emit(test_event, NULL);
-
-	// sprintf(write_buffer, "hello %d", test_event -> size);
-	// UART.write_string(write_buffer);
+	while(1){
+		UART.listen();
+	}
 }

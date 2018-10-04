@@ -1,8 +1,6 @@
 #ifndef EVENT_LOOP_H
 #define EVENT_LOOP_H
 
-#include "Utilities/uart.h"
-
 typedef void(*event_listener)(void*);
 
 #define MAX_LISTENERS 10
