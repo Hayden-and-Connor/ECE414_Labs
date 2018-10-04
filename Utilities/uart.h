@@ -28,6 +28,7 @@
 // } event_handler;
 
 event_handler* uart_char;
+event_handler* uart_line;
 
 
 typedef void (*uart_event_listener)(char*);

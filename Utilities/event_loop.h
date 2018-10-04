@@ -1,7 +1,7 @@
 #ifndef EVENT_LOOP_H
 #define EVENT_LOOP_H
 
-typedef void(*event_listener)(void*);
+typedef void(*event_listener)(const void*);
 
 #define MAX_LISTENERS 10
 typedef struct _event_handler {

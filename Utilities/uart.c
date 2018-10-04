@@ -15,6 +15,7 @@ static void init(){
 	U1MODE |= (1 << 15);
 
 	uart_char = EVENT_LOOP.new_handler();
+	uart_line = EVENT_LOOP.new_handler();
 }
 
 static void busy_write(char input) {
@@ -67,12 +68,28 @@ static void write_string(char input[]){
 	}
 }
 
-char read_value;
 static void listen(){
-	read_value = 0;
-	read_value = nb_read();
+	static char next;
 
-	if(read_value) EVENT_LOOP.emit(uart_char, &read_value); 
+	static char read_buffer[64];
+	static int read_buffer_index = 0;
+
+	next = '\0';
+	next = nb_read();
+
+	if(next) {
+		read_buffer[read_buffer_index] = next;
+		read_buffer_index ++;
+
+		EVENT_LOOP.emit(uart_char, &next);
+	}
+
+	if(next == '\n' || next == '\r') {
+		read_buffer[read_buffer_index] == '\0'; // should replace \n or \r at end of string with null character
+		EVENT_LOOP.emit(uart_line, &read_buffer);
+
+		read_buffer_index = 0;
+	}
 }
 
 uart_interface UART = {

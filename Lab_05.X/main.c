@@ -11,13 +11,13 @@
 
 char write_buffer[64];
 
-void print_char(void* data) {
+void print_char(const void* data) {
 	char value = *(char*)(data);
 
 	UART.busy_write(value);
 }
 
-void test_print(void* data) {
+void test_print(const void* data) {
 	UART.write_string("test \n");
 }
 
@@ -29,6 +29,8 @@ void main(){
 
 	EVENT_LOOP.on(uart_char, &print_char);
 	EVENT_LOOP.emit(uart_char, &test);
+
+	EVENT_LOOP.on(uart_line, &test_print);
 
 
 	while(1){

@@ -3,7 +3,7 @@
 void keypad_test_linked(){}
 
 static void init(){
-	initPin()
+	// initPin()
 }
 
 static void listen(){
