@@ -17,14 +17,16 @@
 #define ADC_CONFIG_SCAN  0
 #define ADC_CONFIG_PORT  0
 
-void analog_in_init() {
+void analog_test_linked(){}
+
+static void init() {
     CloseADC10();
     OpenADC10(ADC_CONFIG1, ADC_CONFIG2, ADC_CONFIG3, ADC_CONFIG_PORT, ADC_CONFIG_SCAN);
     EnableADC10(); // Enable the ADC
 }
 
 
-int32_t analog_in_read(uint8_t analogPIN){
+static int32_t read(uint8_t analogPIN){
 
     SetChanADC10(analogPIN << 16);
     AcquireADC10();
@@ -36,3 +38,7 @@ int32_t analog_in_read(uint8_t analogPIN){
 }
 
 
+analog_in_interface ANALOG = {
+	&init,
+	&read
+};
