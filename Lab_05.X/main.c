@@ -17,73 +17,74 @@ void print_char(const void* data) {
 	UART.busy_write(value);
 }
 
-void test_print(const void* data) {
-	UART.write_string("test \n");
+void on_command(const void* data) {
+	static char* buffer;
+
+	buffer = (char*)(data);
+	char command = buffer[0];
+
+	UART.busy_write('\n');
+	UART.busy_write('\r');
 }
 
 char test = 'a';
 void main(){
 	UART.init();
+	KEYPAD.init();
 
-	// event_handler* test_event = new_event_handler();
-
-	// on(test_event, &handle_test_event);
-
-	// test_event -> listeners[0] = &handle_test_event;
-	// on(test_event, &handle_test_event);
-	// on(test_event, &handle_test_event);
-
-	// emit(test_event, NULL);
-
-	uart_test_linked();
-
-	EVENT_LOOP.on(uart_char, &print_char);
-	EVENT_LOOP.emit(uart_char, &test);
-
-	EVENT_LOOP.on(uart_line, &test_print);
-
+	EVENT_LOOP.on(uart_line, &on_command);
+	EVENT_LOOP.on(uart_char, &print_char); // set uart to echo
 
 	while(1){
 		UART.listen();
+		KEYPAD.listen();
 	}
-}
 	// sprintf(write_buffer, "hello %d", test_event -> size);
 	// UART.write_string(write_buffer);
-	ANSELB &= ~(1 << 13);
-	ANSELB &= ~(1 << 14);
-	TRISB |= (1 << 13);
-	TRISB |= (1 << 14);
+	
+////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+	// Encoder
+	// ANSELB &= ~(1 << 13);
+	// ANSELB &= ~(1 << 14);
+	// TRISB |= (1 << 13);
+	// TRISB |= (1 << 14);
 
 
-	sprintf(write_buffer, "Encoder test: \r \n");
-	UART.write_string(write_buffer);
+	// sprintf(write_buffer, "Encoder test: \r \n");
+	// UART.write_string(write_buffer);
 
-	int i, encoder_sub, encoder_sub_prev, dir, count;
-	count = 0;
-	while(1){
-		encoder_sub_prev = encoder_sub;
-		encoder_sub = (PORTB & (1 << 13)) >> 13;
-		encoder_sub |= (PORTB & (1 << 14)) >> 13;
+	// int i, encoder_sub, encoder_sub_prev, dir, count;
+	// count = 0;
+	// while(1){
+	// 	encoder_sub_prev = encoder_sub;
+	// 	encoder_sub = (PORTB & (1 << 13)) >> 13;
+	// 	encoder_sub |= (PORTB & (1 << 14)) >> 13;
 		
-		if(encoder_sub == 3){
-			if(encoder_sub_prev == 2){
-				count++;
-				sprintf(write_buffer, "%d \r \n", count);
-				UART.write_string(write_buffer);
-			} else if(encoder_sub_prev == 1){
-				count--;
-				sprintf(write_buffer, "%d \r \n", count);
-				UART.write_string(write_buffer);
-			}
+	// 	if(encoder_sub == 3){
+	// 		if(encoder_sub_prev == 2){
+	// 			count++;
+	// 			sprintf(write_buffer, "%d \r \n", count);
+	// 			UART.write_string(write_buffer);
+	// 		} else if(encoder_sub_prev == 1){
+	// 			count--;
+	// 			sprintf(write_buffer, "%d \r \n", count);
+	// 			UART.write_string(write_buffer);
+	// 		}
 			
-		}
+	// 	}
 		
-		for(i = 0; i < 1000; i++){
+	// 	for(i = 0; i < 1000; i++){
 
-		}
-	}
+	// 	}
+	// }
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 
-// // working analog read
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+// working analog read
 // 	UART.init();
 // 	int i;
 
@@ -97,5 +98,19 @@ void main(){
 
 // 		// }
 // 	}
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+	// Keypad Input
+
+	// sprintf(write_buffer, "%X", (PORTB >> 12) | ((PORTB & 0x0800) >> 10));
+	// UART.write_string(write_buffer);
+
+
+
+	// Keep track of keypad state for level to pulse for event triggers
 }
 
