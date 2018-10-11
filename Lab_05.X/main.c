@@ -51,6 +51,9 @@ void on_command(const void* data) {
 			UART.write_string("encouder");
 			mode = ENCODER_INPUT;
 			break;
+		case 'm':
+			mode = KEYPAD_MATRIX;
+			break;
 	}
 
 	UART.busy_write('\n');
@@ -63,13 +66,23 @@ void on_char(const void* data) {
 	if(value == 'q') mode = MAIN;
 }
 
+void print_key(const void* data){
+	key_event value = *(key_event*)(data);
+
+	UART.write_string("toggled");
+
+	if(value.state == DOWN) UART.busy_write(value.key);
+}
+
 void main(){
 	UART.init();
 	KEYPAD.init();
-	ANALOG.init();
+	// ANALOG.init();
 
 	EVENT_LOOP.on(uart_line, &on_command);
 	EVENT_LOOP.on(uart_char, &on_char);
+
+	EVENT_LOOP.on(key_toggle, &print_key);
 
 	// EVENT_LOOP.on(uart_char, &print_char); // set uart to echo
 
@@ -83,8 +96,10 @@ void main(){
 		else if(mode == ENCODER_INPUT) {
 			UART.write_string("ENCODER \n\r");
 		}
+		else if(mode == KEYPAD_MATRIX){
+			KEYPAD.listen();
+		}
 		
-		KEYPAD.listen();
 		UART.listen();
 	}
 

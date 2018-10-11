@@ -19,7 +19,7 @@ typedef enum state {
 } STATE;
 
 typedef struct key_event {
-	char* key;
+	char key;
 	STATE state;
 } key_event;
 
