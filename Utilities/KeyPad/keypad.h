@@ -1,15 +1,25 @@
+// keypad.h
+// 
+// Please wire this so that it uses PORTB pins
+
 #ifndef KEYPAD_H
 #define KEYPAD_H
 
 #include "Utilities/gpio.c"
 #include "Utilities/event_loop.h"
 
+#include "Utilities/uart.h"
+
+#include <stdlib.h>
+
+event_handler* key_toggle;
+
 typedef enum state {
 	UP, DOWN
 } STATE;
 
 typedef struct key_event {
-	char key;
+	char* key;
 	STATE state;
 } key_event;
 

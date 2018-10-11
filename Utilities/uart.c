@@ -77,18 +77,25 @@ static void listen(){
 	next = '\0';
 	next = nb_read();
 
-	if(next) {
-		read_buffer[read_buffer_index] = next;
-		read_buffer_index ++;
+	if(!next) return;
 
-		EVENT_LOOP.emit(uart_char, &next);
-	}
+	if(next == "\b") {
+		return; // this was too much of a headache, sorry
+		read_buffer[read_buffer_index] = '\0';
+		read_buffer_index == 0 ? 0 : read_buffer_index - 1;
 
-	if(next == '\n' || next == '\r') {
-		read_buffer[read_buffer_index] == '\0'; // should replace \n or \r at end of string with null character
+		busy_write('\b');
+	}	
+	else if(next == '\n' || next == '\r') {
+		read_buffer[read_buffer_index + 1] == '\0'; // should replace \n or \r at end of string with null character
 		EVENT_LOOP.emit(uart_line, &read_buffer);
 
 		read_buffer_index = 0;
+	}
+	else {
+		read_buffer[read_buffer_index] = next;
+		read_buffer_index ++;
+		EVENT_LOOP.emit(uart_char, &next);
 	}
 }
 
