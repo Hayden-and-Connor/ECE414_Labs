@@ -2,6 +2,7 @@
 #include "Utilities/uart.h"
 #include "Utilities/event_loop.h"
 #include "Utilities/Analog_In/analog_in.h"
+#include "Utilities/Encoder/encoder.h"
 
 #include <stdlib.h>
 
@@ -15,11 +16,11 @@ char write_buffer[64];
 typedef enum _mode {
 	MAIN,
 	ANALOG_INPUT,
-	ENCODER,
+	ENCODER_INPUT,
 	KEYPAD_MATRIX
 } MODE;
 
-MODE mode = MAIN;
+MODE mode = ENCODER_INPUT;
 int analogPin;
 
 void print_char(const void* data) {
@@ -36,11 +37,19 @@ void on_command(const void* data) {
 	buffer = (char*)(data);
 	char command = buffer[0];
 
+	UART.busy_write(command);
+
 	switch(command) {
 		case 'a':
-			mode = ANALOG;
+			mode = ANALOG_INPUT;
 
+			char arg = buffer[1];
+			analogPin = arg - '0';
 
+			break;
+		case 'e':
+			UART.write_string("encouder");
+			mode = ENCODER_INPUT;
 			break;
 	}
 
@@ -57,29 +66,26 @@ void on_char(const void* data) {
 void main(){
 	UART.init();
 	KEYPAD.init();
-	analog_in_init();
+	ANALOG.init();
 
 	EVENT_LOOP.on(uart_line, &on_command);
 	EVENT_LOOP.on(uart_char, &on_char);
 
-	EVENT_LOOP.on(uart_char, &print_char); // set uart to echo
+	// EVENT_LOOP.on(uart_char, &print_char); // set uart to echo
 
 	while(1){
-		
-		switch(mode) {
-			case MAIN:
-				UART.write_string("MAIN\n\r");
-				break;
-			case ANALOG_INPUT:
-				UART.write_string("ANALOG\n\r");
-				break;
-			default: UART.write_string("Its broken");
 
+		if(mode == MAIN) {}
+		else if(mode == ANALOG_INPUT) {
+			sprintf(write_buffer, "%d \n\r", ANALOG.read(analogPin) );
+			UART.write_string( write_buffer );
+		}
+		else if(mode == ENCODER_INPUT) {
+			UART.write_string("ENCODER \n\r");
 		}
 		
 		KEYPAD.listen();
 		UART.listen();
-		
 	}
 
 	

@@ -1,19 +1,28 @@
 #ifndef ENCODER_H
 #define ENCODER_H
 
-// must use PORTB
-#define CHN_A 13
-#define CHN_B 14
+#include "Utilities/uart.h"
+#include <p32xxxx.h>
+#include <plib.h>
 
-void init();
+
+// please use PORTB
+#define CHN_A 14
+#define CHN_B 15
+
+// void init();
 
 // must be called as frequently as possible
-void poll();
+// void poll();
 
-typedef struct encoder_interface {
+void encoder_init();
+void encoder_poll();
+
+typedef struct _encoder_interface {
 	void (*init)();
 	void (*poll)();
 } encoder_interface;
 
 encoder_interface ENCODER;
+
 #endif
