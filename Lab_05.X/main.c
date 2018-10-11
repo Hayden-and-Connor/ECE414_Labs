@@ -1,6 +1,7 @@
 #include "Utilities/KeyPad/keypad.h"
 #include "Utilities/uart.h"
 #include "Utilities/event_loop.h"
+#include "Utilities/Analog_In/analog_in.h"
 
 #include <stdlib.h>
 
@@ -11,6 +12,16 @@
 
 char write_buffer[64];
 
+typedef enum _mode {
+	MAIN,
+	ANALOG_INPUT,
+	ENCODER,
+	KEYPAD_MATRIX
+} MODE;
+
+MODE mode = MAIN;
+int analogPin;
+
 void print_char(const void* data) {
 	char value = *(char*)(data);
 
@@ -20,27 +31,57 @@ void print_char(const void* data) {
 void on_command(const void* data) {
 	static char* buffer;
 
+	if(mode != MAIN) return;
+
 	buffer = (char*)(data);
 	char command = buffer[0];
+
+	switch(command) {
+		case 'a':
+			mode = ANALOG;
+
+
+			break;
+	}
 
 	UART.busy_write('\n');
 	UART.busy_write('\r');
 }
 
-char test = 'a';
+void on_char(const void* data) {
+	char value = *(char*)(data);
+
+	if(value == 'q') mode = MAIN;
+}
+
 void main(){
 	UART.init();
 	KEYPAD.init();
+	analog_in_init();
 
 	EVENT_LOOP.on(uart_line, &on_command);
+	EVENT_LOOP.on(uart_char, &on_char);
+
 	EVENT_LOOP.on(uart_char, &print_char); // set uart to echo
 
 	while(1){
-		UART.listen();
+		
+		switch(mode) {
+			case MAIN:
+				UART.write_string("MAIN\n\r");
+				break;
+			case ANALOG_INPUT:
+				UART.write_string("ANALOG\n\r");
+				break;
+			default: UART.write_string("Its broken");
+
+		}
+		
 		KEYPAD.listen();
+		UART.listen();
+		
 	}
-	// sprintf(write_buffer, "hello %d", test_event -> size);
-	// UART.write_string(write_buffer);
+
 	
 ////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
@@ -101,16 +142,5 @@ void main(){
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 
-
-/////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
-	// Keypad Input
-
-	// sprintf(write_buffer, "%X", (PORTB >> 12) | ((PORTB & 0x0800) >> 10));
-	// UART.write_string(write_buffer);
-
-
-
-	// Keep track of keypad state for level to pulse for event triggers
 }
 
