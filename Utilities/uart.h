@@ -51,6 +51,9 @@ typedef struct uart_interface {
 
 	void (*listen)();
 
+	void (*clear_buffer)();
+	int* echo;
+
 } uart_interface;
 
 // instance of the interface we will be using

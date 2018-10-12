@@ -20,14 +20,9 @@ typedef enum _mode {
 	KEYPAD_MATRIX
 } MODE;
 
-MODE mode = ENCODER_INPUT;
+MODE mode = MAIN;
 int analogPin;
 
-void print_char(const void* data) {
-	char value = *(char*)(data);
-
-	UART.busy_write(value);
-}
 
 void on_command(const void* data) {
 	static char* buffer;
@@ -37,39 +32,50 @@ void on_command(const void* data) {
 	buffer = (char*)(data);
 	char command = buffer[0];
 
-	UART.busy_write(command);
+	//UART.write_string(buffer);
+	// UART.busy_write('\n');
+	// UART.busy_write('\r');
 
-	switch(command) {
-		case 'a':
+	if(command == 'a') {
+		char arg = buffer[1];
+		if(arg >= '0' && arg <= '9'){
 			mode = ANALOG_INPUT;
-
-			char arg = buffer[1];
-			analogPin = arg - '0';
-
-			break;
-		case 'e':
-			UART.write_string("encouder");
-			mode = ENCODER_INPUT;
-			break;
-		case 'm':
-			mode = KEYPAD_MATRIX;
-			break;
+			*UART.echo = 0;
+			analogPin = arg - '0';	
+			char message[32];
+			sprintf(message, "Reading from AN%d ... \r\n", analogPin);
+			UART.write_string(message);
+		} else {
+			UART.write_string("Invalid analog pin.\r\n>>");
+		}
 	}
-
-	UART.busy_write('\n');
-	UART.busy_write('\r');
+	else if(command == 'm') {
+		mode = KEYPAD_MATRIX;
+		*UART.echo = 0;
+		UART.write_string("Reading keypad matrix ... \r\n");
+	}
+	else if(command == 'e') {
+		mode = ENCODER_INPUT;
+		*UART.echo = 0;
+		UART.write_string("Reading encoder ... \r\n");
+	} else {
+		UART.write_string(">>");
+	}
 }
 
 void on_char(const void* data) {
 	char value = *(char*)(data);
 
-	if(value == 'q') mode = MAIN;
+	if(value == 'q'){
+		mode = MAIN;
+		*UART.echo = 1;
+		UART.clear_buffer();
+		UART.write_string("\r\n>>");
+	}
 }
 
 void print_key(const void* data){
 	key_event value = *(key_event*)(data);
-
-	UART.write_string("toggled");
 
 	if(value.state == DOWN) UART.busy_write(value.key);
 }
@@ -77,91 +83,53 @@ void print_key(const void* data){
 void main(){
 	UART.init();
 	KEYPAD.init();
-	// ANALOG.init();
+	ANALOG.init();
+	//ENCODER.init();
 
 	EVENT_LOOP.on(uart_line, &on_command);
 	EVENT_LOOP.on(uart_char, &on_char);
 
 	EVENT_LOOP.on(key_toggle, &print_key);
 
-	// EVENT_LOOP.on(uart_char, &print_char); // set uart to echo
+	//EVENT_LOOP.on(uart_char, &print_char); // set uart to echo
+
+	ANSELB &= ~(1 << 13);
+	ANSELB &= ~(1 << 14);
+	TRISB |= (1 << 13);
+	TRISB |= (1 << 14);
+
+	int i, encoder_sub, encoder_sub_prev, dir, count;
+	count = 0;
 
 	while(1){
-
+		UART.listen();
 		if(mode == MAIN) {}
 		else if(mode == ANALOG_INPUT) {
-			sprintf(write_buffer, "%d \n\r", ANALOG.read(analogPin) );
+			sprintf(write_buffer, "\r %5d \033[0K", ANALOG.read(analogPin) );
 			UART.write_string( write_buffer );
 		}
 		else if(mode == ENCODER_INPUT) {
-			UART.write_string("ENCODER \n\r");
+			//UART.write_string("ENCODER \n\r");
+			encoder_sub_prev = encoder_sub;
+			encoder_sub = (PORTB & (1 << 13)) >> 13;
+			encoder_sub |= (PORTB & (1 << 14)) >> 13;
+			
+			if(encoder_sub == 3){
+				if(encoder_sub_prev == 2){
+					UART.busy_write('+');
+				} else if(encoder_sub_prev == 1){
+					UART.busy_write('-');
+				}
+				
+			}
+			
+			for(i = 0; i < 1000; i++){
+
+			}
 		}
 		else if(mode == KEYPAD_MATRIX){
 			KEYPAD.listen();
 		}
-		
-		UART.listen();
 	}
-
-	
-////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
-	// Encoder
-	// ANSELB &= ~(1 << 13);
-	// ANSELB &= ~(1 << 14);
-	// TRISB |= (1 << 13);
-	// TRISB |= (1 << 14);
-
-
-	// sprintf(write_buffer, "Encoder test: \r \n");
-	// UART.write_string(write_buffer);
-
-	// int i, encoder_sub, encoder_sub_prev, dir, count;
-	// count = 0;
-	// while(1){
-	// 	encoder_sub_prev = encoder_sub;
-	// 	encoder_sub = (PORTB & (1 << 13)) >> 13;
-	// 	encoder_sub |= (PORTB & (1 << 14)) >> 13;
-		
-	// 	if(encoder_sub == 3){
-	// 		if(encoder_sub_prev == 2){
-	// 			count++;
-	// 			sprintf(write_buffer, "%d \r \n", count);
-	// 			UART.write_string(write_buffer);
-	// 		} else if(encoder_sub_prev == 1){
-	// 			count--;
-	// 			sprintf(write_buffer, "%d \r \n", count);
-	// 			UART.write_string(write_buffer);
-	// 		}
-			
-	// 	}
-		
-	// 	for(i = 0; i < 1000; i++){
-
-	// 	}
-	// }
-////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////
-// working analog read
-// 	UART.init();
-// 	int i;
-
-// 	analog_in_init();
-// 	int32_t volt = 0;
-// 	while(1){
-// 		// volt = analog_in_read(9);
-// 		// sprintf(write_buffer, "%04d    \r \n");
-// 		// UART.write_string(write_buffer);
-// 		// for(i = 0; i < 1000000; i++){
-
-// 		// }
-// 	}
-////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////
-
 }
 

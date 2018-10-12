@@ -2,6 +2,8 @@
 
 void uart_test_linked(){}
 
+static int echo;
+
 static void init(){
 	TRISA = ~0;
 	ANSELA = 0;
@@ -16,6 +18,8 @@ static void init(){
 
 	uart_char = EVENT_LOOP.new_handler();
 	uart_line = EVENT_LOOP.new_handler();
+
+	echo = 1;
 }
 
 static void busy_write(char input) {
@@ -68,35 +72,44 @@ static void write_string(char input[]){
 	}
 }
 
+static int read_buffer_index = 0;
+
 static void listen(){
 	static char next;
 
 	static char read_buffer[64];
-	static int read_buffer_index = 0;
 
-	next = '\0';
-	next = nb_read();
-
-	if(!next) return;
-
-	if(next == "\b") {
-		return; // this was too much of a headache, sorry
-		read_buffer[read_buffer_index] = '\0';
-		read_buffer_index == 0 ? 0 : read_buffer_index - 1;
-
-		busy_write('\b');
-	}	
-	else if(next == '\n' || next == '\r') {
-		read_buffer[read_buffer_index + 1] == '\0'; // should replace \n or \r at end of string with null character
-		EVENT_LOOP.emit(uart_line, &read_buffer);
-
+	if(read_buffer_index > 63){
 		read_buffer_index = 0;
 	}
-	else {
-		read_buffer[read_buffer_index] = next;
-		read_buffer_index ++;
-		EVENT_LOOP.emit(uart_char, &next);
+
+	next = '\0';
+	next = UART.nb_read();
+
+	if(next == '\0') return;
+
+	if(next == 127 || next == 8 || next == 27) return;
+
+	if(next == '\n' || next == '\r') {
+		
+		//write_string(read_buffer);
+		if(echo) write_string("\n \r"); //echo
+
+		read_buffer[read_buffer_index] == '\0'; // should replace \n or \r at end of string with null character
+		read_buffer_index = 0;
+		EVENT_LOOP.emit(uart_line, &read_buffer);
+		return;
 	}
+
+	if(echo) busy_write(next); // echo
+	read_buffer[read_buffer_index] = next;
+	read_buffer_index++;
+	EVENT_LOOP.emit(uart_char, &next);
+	
+}
+
+static void clear_buffer(){
+	read_buffer_index = 0;
 }
 
 uart_interface UART = {
@@ -113,5 +126,8 @@ uart_interface UART = {
 
 	&write_string,
 
-	&listen
+	&listen,
+
+	&clear_buffer,
+	&echo
 };

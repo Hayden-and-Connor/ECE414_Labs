@@ -53,9 +53,6 @@ static void listen(){
 	for(i=0; i<4; i++) {
 		PORTB &= ~(1 << rowPins[i]);
 
-		int k;
-		for(k=0; k<10000; k++) {}
-
 		for(j=0; j<4; j++){
 			STATE rawState = (PORTB & (1 << colPins[j])) ? UP : DOWN;
 
@@ -70,9 +67,6 @@ static void listen(){
 				debounce_counter[i][j] = 0;
 
 				buttonStates[i][j] = rawState;
-
-				sprintf(&buffer, "%c, %d, %d, %d, \n\r", keys[i][j], i, j, buttonStates[i][j]);
-				UART.write_string(buffer);
 
 				// add event to queue
 				currentEvent.state = buttonStates[i][j];
