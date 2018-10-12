@@ -5,7 +5,6 @@ void keypad_test_linked(){}
 static const int rowPins[4] = { 3, 2, 1, 0 };
 static const int colPins[4] = { 7, 8, 9, 10 };
 
-
 #define DEBOUNCE_THRESHOLD 200
 static int debounce_counter[4][4] = {
 	{ 0, 0, 0, 0 },
@@ -31,14 +30,18 @@ static const char keys[4][4] = {
 static void init(){
 
 	// Enable Pull Up resitors on input pins for scanning
-	ANSELB = 0;
-	TRISB = 0x0780; // RB7, RB8, RB9, RB10 inputs, columns / RB0 - RB3 output, rows
+	int i;
+	for(i = 0; i < 4; i++){
+		ANSELB &= ~(1 << rowPins[i]); // turn off analog
+		ANSELB &= ~(1 << colPins[i]); // turn off analog
 
-	CNPUB = 0x0780; // pull up on RB7, RB8, RB9, RB10
-	CNPDB = 0x0000;
+		TRISB &= ~(1 << rowPins[i]); // set row pins as outputs
+		TRISB |= (1 << colPins[i]);  // set col pins as inputs
 
-	// set all row pins to high
-	PORTB = 0x000F;
+		CNPUB |= (1 << colPins[i]); // turn on pull ups on inputs
+
+		PORTB |= (1 << rowPins[i]); // turn on output rows
+	}
 
 	key_toggle = EVENT_LOOP.new_handler();
 }
@@ -76,20 +79,10 @@ static void listen(){
 			}
 		}
 
-		PORTB = 0x000F;
+		for(j = 0; j < 4; j++){
+			PORTB |= (1 << rowPins[j]);			
+		}
 	}
-
-	// static char write_buffer[60];
-
-
-
-	// int i;
-	// while(1){
-	// 	sprintf(write_buffer, "%X \n \r", PORTB);
-	// 	UART.write_string(write_buffer);
-
-	// 	for(i = 0; i < 100000; i++){}
-	// }
 }
 
 keypad_interface KEYPAD = {
